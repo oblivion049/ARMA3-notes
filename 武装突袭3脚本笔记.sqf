@@ -1,156 +1,166 @@
 /*
-	½Å±¾½éÉÜv0.5
-	×÷Õß£º¸¡ÉúĞª¾¡
-	¼ò½é£º¸öÈËËÑ¼¯µÄwiki½Å±¾ÃüÁîÓëº¯ÊıµÄÒ»Ğ©ÓÃ·¨,½ÏÎª¼ò½à,½ö¹©Ñ§Ï°²Î¿¼Ê¹ÓÃ¡£
-	½¨Òé£ºÊ¹ÓÃVScodeµÈ×¨Òµ±à³ÌÈí¼ş£¬°²×°Ïà¹ØµÄSQFÓï·¨
-	vscode ÖĞµÄ²å¼şÃû³Æ£º
+	è„šæœ¬ä»‹ç»v1.0
+	ä½œè€…ï¼šæµ®ç”Ÿæ­‡å°½
+	ç®€ä»‹ï¼šä¸ªäººæœé›†çš„wikiè„šæœ¬å‘½ä»¤ä¸å‡½æ•°çš„ä¸€äº›ç”¨æ³•, è¾ƒä¸ºç®€æ´, ä»…ä¾›å­¦ä¹ å‚è€ƒä½¿ç”¨ã€‚
+	å»ºè®®ï¼šä½¿ç”¨VScodeç­‰ä¸“ä¸šç¼–ç¨‹è½¯ä»¶ï¼Œå®‰è£…ç›¸å…³çš„SQFè¯­æ³•
+	vscode ä¸­çš„æ’ä»¶åç§°ï¼š
 	senfo.sqflint 
 	Armitxes.sqf
 	HkonRRydland.a3cfgfunctions
 	vlad333000.sqf
-	Èç¹ûÄã¸ĞĞËÈ¤£¬¿ÉÒÔ¼ÓÈëÎÒµÄÈºÁÄÒ»ÆğÑ§Ï°¡£
-	Aram3&Îä×°Í»Ï®3:É³µñÍæ¼ÒÈº£º781108732
-	QinµÄÎä×°Í»Ï®Èı·½Áª»úÈº£º	643134730
+	--æ‰©å±•å®‰è£…å®Œæˆåé€‰æ‹©Armitxes.sqfæ‰©å±•, ç‚¹å‡»è®¾ç½®ä¸»é¢˜é¢œè‰², ä¹‹åå°†sqfæ–‡ä»¶ä¸sqfè¯­è¨€å…³è”
+	å¦‚æœä½ æ„Ÿå…´è¶£ï¼Œå¯ä»¥åŠ å…¥æˆ‘çš„ç¾¤èŠä¸€èµ·å­¦ä¹ ã€‚
+	Aram3&æ­¦è£…çªè¢­3:æ²™é›•ç©å®¶ç¾¤ï¼š781108732
+	Qinçš„æ­¦è£…çªè¢­ä¸‰æ–¹è”æœºç¾¤ï¼š	643134730
 */
 
-/*=============================½Å±¾=========================*/
-//¿ªÍ·µÄÒÔ¼°/**/°üº¬µÄÎÄ±¾ÊÇ×¢ÊÍÀàĞÍ,Èç¹ûÄã°²×°ÁËÏàÓ¦µÄSQF²å¼ş£¬ÄÇÃ´×¢ÊÍ»áÒÔÂÌÉ«¸ßÁÁÏÔÊ¾
+/*=============================è„šæœ¬=========================*/
+// å¼€å¤´çš„ä»¥åŠ/**/åŒ…å«çš„æ–‡æœ¬æ˜¯æ³¨é‡Šç±»å‹, å¦‚æœä½ å®‰è£…äº†ç›¸åº”çš„SQFæ’ä»¶ï¼Œé‚£ä¹ˆæ³¨é‡Šä¼šä»¥ç»¿è‰²é«˜äº®æ˜¾ç¤º
 /*
-	°üº¬×¢ÊÍÔÚÄÚµÄÒÔÏÂÀàĞÍ,ÔÚ±àÒëÊ±»á±»ÒıÇæ×Ô¶¯ºöÂÔ,²»»áÓ°ÏìÄãµÄ´úÂë
-	ĞĞ»òÓï¾äÄ©Î²µÄÎ²Ëæ¿Õ¸ñ
-	¿ÕĞĞ
-	ÆÀÂÛ
+	åŒ…å«æ³¨é‡Šåœ¨å†…çš„ä»¥ä¸‹ç±»å‹, åœ¨ç¼–è¯‘æ—¶ä¼šè¢«å¼•æ“è‡ªåŠ¨å¿½ç•¥, ä¸ä¼šå½±å“ä½ çš„ä»£ç 
+	è¡Œæˆ–è¯­å¥æœ«å°¾çš„å°¾éšç©ºæ ¼
+	ç©ºè¡Œ
+	è¯„è®º
 */
-//ÆÀÂÛÊÇÒ»ÔªÔËËã·ûcommentÉú³ÉµÄ×¢ÊÍ,ÄãÒª×¢ÒâµÄÊÇ²»Ó¦¸ÃËü,ÒòÎªËüÊµ¼ÊÉÏ»á±»Ö´ĞĞ(ĞèÒªÊ±¼äÀ´Ö´ĞĞ)Ê¹ÓÃËüÃ»ÓĞÈÎºÎºÃ´¦
+// è¯„è®ºæ˜¯ä¸€å…ƒè¿ç®—ç¬¦commentç”Ÿæˆçš„æ³¨é‡Š, ä½ è¦æ³¨æ„çš„æ˜¯ä¸åº”è¯¥å®ƒ, å› ä¸ºå®ƒå®é™…ä¸Šä¼šè¢«æ‰§è¡Œ(éœ€è¦æ—¶é—´æ¥æ‰§è¡Œ)ä½¿ç”¨å®ƒæ²¡æœ‰ä»»ä½•å¥½å¤„
 comment "This is a commented line";	
+/*=============================åˆå§‹åŒ–é¡ºåº=========================*/
+/* 
+	ç¼–è¯‘å‡½æ•°æˆ–è€…recompileçš„å‡½æ•°æœ€æ—©æ‰§è¡Œ
+	å…¶æ¬¡æ˜¯å®ä½“å±æ€§
+	EDENçš„åˆå§‹åŒ–è¡¨è¾¾å¼å§‹ç»ˆæ—©äºinit.sqfæ‰§è¡Œ, æ„å‘³ç€init.sqfå®šä¹‰çš„å‡½æ•°ä¸èƒ½é€šè¿‡åœ¨EDENåˆå§‹åŒ–è°ƒç”¨ã€‚å¹¶ä¸”æ­¤æ—¶isplayerå¯èƒ½ä¸èµ·ä½œç”¨
+	SPæ¨¡å¼ä¸­init.sqfè¦æ—©äºåœºæ™¯å±æ€§è¢«æ‰§è¡Œ
+	initServer.sqfåœ¨MPä¸­è¦æœ€å…ˆäºinit.sqfè¢«æ‰§è¡Œ, ç„¶åæ˜¯initPlayerLocal.sqf åœ¨SPä¸­init.sqfæœ€æ—©æ‰§è¡Œ
+*/
 
-//µæ½ÅÊ¯²½±ø¿ª³¡±³¾°ÒôÀÖ  "LeadTrack02_F_EXP"
-/*=============================µ¥Î»Éí·İ============================*/
-//µ¥ÈËÈÎÎñÉèÖÃÃû×Ö[Ãû×Ö£¬Ãû×Ö£¬ĞÕÊÏ],ÓÃÓÚÈ¡´úÍæ¼Ò±¾»úID
-player setName ["Tony Jackson","Tony","Jackson"];
-player setName ["Ben Kerry","Ben","Kerry"];
+// å«è„šçŸ³æ­¥å…µå¼€åœºèƒŒæ™¯éŸ³ä¹ "LeadTrack02_F_EXP"
+/*=============================å•ä½èº«ä»½============================*/
+// å•äººä»»åŠ¡è®¾ç½®åå­—[åå­—ï¼Œåå­—ï¼Œå§“æ°], ç”¨äºå–ä»£ç©å®¶æœ¬æœºID
+player setName ["Tony Jackson", "Tony", "Jackson"];
+player setName ["Ben Kerry", "Ben", "Kerry"];
 [player, "Kirby", "Male08ENGB", 1.0, "Jackson"] call BIS_fnc_setIdentity;
 
-//¾çÇéµ¥Î»µÄÌØÊâĞÔ£¬Ö±½Ó·ÅÖÃºó½øÈëÓÎÏ·²¢·Ç½ÇÉ«Á³²¿¡£ĞèÒªĞ´Èë³õÊ¼»¯£ºIdentityÉí·İ°üº¬ÁËÃæ²¿¡¢Òôµ÷¡¢ÑïÉùÆ÷¡¢ÑÛ¾µ¡¢ºôºÅĞÅÏ¢
+// å‰§æƒ…å•ä½çš„ç‰¹æ®Šæ€§ï¼Œç›´æ¥æ”¾ç½®åè¿›å…¥æ¸¸æˆå¹¶éè§’è‰²è„¸éƒ¨ã€‚éœ€è¦å†™å…¥åˆå§‹åŒ–ï¼šIdentityèº«ä»½åŒ…å«äº†é¢éƒ¨ã€éŸ³è°ƒã€æ‰¬å£°å™¨ã€çœ¼é•œã€å‘¼å·ä¿¡æ¯
 this setIdentity "EPC_B_Miller"; // "Miller"
 this setIdentity "EPC_B_James"; // "James"
 this setIdentity "EPB_I_Stavrou";
 this setIdentity "EPA_B_Hardy";
-this setidentity "EPA_B_Adams"; //Adams
+this setidentity "EPA_B_Adams"; // Adams
 
-//ÉèÖÃÃæ¿×
+// è®¾ç½®é¢å­”
 _soldier setFace "WhiteHead_18";
-player setface "WhiteHead_11"; //kirbyÁ³²¿
+player setface "WhiteHead_11"; // kirbyè„¸éƒ¨
 BIS_BHQ setface"WhiteHead_07";
-//ÉèÖÃ¾üÏÎ
-player setRank "CORPORAL"; //Sgt Jackson  //SERGEANT ÖĞÊ¿
-//ÉèÖÃÒôµ÷
+// è®¾ç½®å†›è¡”
+player setRank "CORPORAL"; // Sgt Jackson // SERGEANT ä¸­å£«
+// è®¾ç½®éŸ³è°ƒ
 _unit setPitch 1;
-//ÉèÖÃÑïÉùÆ÷,µ¥Î»Ã»ÓĞÑïÉùÆ÷Ê±»á³öÏÖ¾²ÒôÇé¿ö
-player setSpeaker "Male08ENGB";//ÃÀ¹úÓ¢Óï08
-//ÉèÖÃºôºÅ,Ä¬ÈÏÇé¿öÏÂ£¬ÔÚÏÂ´ïÃüÁîÊ±£¬µ¥Î»°´Æä±àºÅÑ°Ö·¡£ÉèÖÃ nameSound ºó£¬Ëü½«ÓÃÓÚ¶Ôµ¥Ôª½øĞĞÑ°Ö·¡£ÀıÈç£º´Ó"2-Í£»ğ!", ±ä³É: "Ã×ÀÕ, Í£»ğ!".
+// è®¾ç½®æ‰¬å£°å™¨, å•ä½æ²¡æœ‰æ‰¬å£°å™¨æ—¶ä¼šå‡ºç°é™éŸ³æƒ…å†µ
+player setSpeaker "Male08ENGB"; // ç¾å›½è‹±è¯­08
+// è®¾ç½®å‘¼å·, é»˜è®¤æƒ…å†µä¸‹ï¼Œåœ¨ä¸‹è¾¾å‘½ä»¤æ—¶ï¼Œå•ä½æŒ‰å…¶ç¼–å·å¯»å€ã€‚è®¾ç½® nameSound åï¼Œå®ƒå°†ç”¨äºå¯¹å•å…ƒè¿›è¡Œå¯»å€ã€‚ä¾‹å¦‚ï¼šä»"2-åœç«!", å˜æˆ: "ç±³å‹’, åœç«!".
 _unit setNameSound "Miller";
-this setNameSound ""; //Õâ»áÖØÖÃµ¥Î»µÄºôºÅÉùÒô
-//×Ö·û´®ÀàĞÍ¿ÉÒÔÊ¹ÓÃ¸ö´æÔÚconfigfile >> "RadioProtocolENG" >> "Words"µÄÈÎºÎ´Ê»ã
-//¿ÉÒÔÊ¹ÓÃgetarray¼ì²é¸Ã´Ê»ãÊÇ·ñ¾ßÓĞÉùÒôÎÄ¼ş,µ±·µ»ØÖµ²»Îª[]Ê±,ÄÇÃ´×é³¤¾Í»áÕıÈ·µÄÊ¹ÓÃ¸ÃÃû³ÆÀ´ÏÂ´ïÃüÁî
+this setNameSound ""; // è¿™ä¼šé‡ç½®å•ä½çš„å‘¼å·å£°éŸ³
+// å­—ç¬¦ä¸²ç±»å‹å¯ä»¥ä½¿ç”¨ä¸ªå­˜åœ¨configfile >> "RadioProtocolENG" >> "Words"çš„ä»»ä½•è¯æ±‡
+// å¯ä»¥ä½¿ç”¨getarrayæ£€æŸ¥è¯¥è¯æ±‡æ˜¯å¦å…·æœ‰å£°éŸ³æ–‡ä»¶, å½“è¿”å›å€¼ä¸ä¸º[]æ—¶, é‚£ä¹ˆç»„é•¿å°±ä¼šæ­£ç¡®çš„ä½¿ç”¨è¯¥åç§°æ¥ä¸‹è¾¾å‘½ä»¤
 getArray(configfile >> "RadioProtocolENG" >> "Words" >> "Kerry");
 this setNameSound "Alpha";
 
 
-//ÉèÖÃµ¥Î»»ÕÕÂ
+// è®¾ç½®å•ä½å¾½ç« 
 [player, "111thID"] call BIS_fnc_setUnitInsignia;
-[this,"GryffinRegiment"] call BIS_fnc_setUnitInsignia;//¸ñÀï·ÒÍÅ
-[this,"CSAT_ScimitarRegiment"] call BIS_fnc_setUnitInsignia;//Íäµ¶¾üÍÅ
-[this,"AAF_3rdRegiment"] call BIS_fnc_setUnitInsignia;//µÚÈıÖ§Ô®ÍÅ
-[this,"AAF_1stRegiment"] call BIS_fnc_setUnitInsignia;//µÚÒ»ÍÅ
-[this,"TFAegis"] call BIS_fnc_setUnitInsignia;//Éñ¶ÜÌØÇ²¶Ó
+[this, "GryffinRegiment"] call BIS_fnc_setUnitInsignia; // æ ¼é‡ŒèŠ¬å›¢
+[this, "CSAT_ScimitarRegiment"] call BIS_fnc_setUnitInsignia; // å¼¯åˆ€å†›å›¢
+[this, "AAF_3rdRegiment"] call BIS_fnc_setUnitInsignia; // ç¬¬ä¸‰æ”¯æ´å›¢
+[this, "AAF_1stRegiment"] call BIS_fnc_setUnitInsignia; // ç¬¬ä¸€å›¢
+[this, "TFAegis"] call BIS_fnc_setUnitInsignia; // ç¥ç›¾ç‰¹é£é˜Ÿ
 
-//ÉèÖÃÃû³Æ["ĞÕÃû","Ãû×Ö","ĞÕÊÏ"]
-player setName ["Jones Johnson","Johnson","Johnson"];
+// è®¾ç½®åç§°["å§“å", "åå­—", "å§“æ°"]
+player setName ["Jones Johnson", "Johnson", "Johnson"];
 _soldier setFace "WhiteHead_18";
 player setRank "CORPORAL";
-//ÆôÓÃ»ò½ûÓÃÌØĞÔ»ò¸Ä±ä¸ø¶¨µ¥Î»µÄÌØĞÔ¡£
-player setUnitTrait ["Engineer", true]; //¹¤³ÌÊ¦£¬¿ÉÒÔÎ¬ĞŞ³µÁ¾ºÍ²ğ³ıµØÀ×
-player setUnitTrait["ExplosiveSpecialist",true];//±¬Õ¨×¨¼Ò ¿ÉÒÔ½â³ıµØÀ×
-//»ñÈ¡µ¥Î»ÌØÕ÷
+// å¯ç”¨æˆ–ç¦ç”¨ç‰¹æ€§æˆ–æ”¹å˜ç»™å®šå•ä½çš„ç‰¹æ€§ã€‚
+player setUnitTrait ["Engineer", true]; // å·¥ç¨‹å¸ˆï¼Œå¯ä»¥ç»´ä¿®è½¦è¾†å’Œæ‹†é™¤åœ°é›·
+player setUnitTrait ["ExplosiveSpecialist", true]; // çˆ†ç‚¸ä¸“å®¶ å¯ä»¥è§£é™¤åœ°é›·
+// è·å–å•ä½ç‰¹å¾
 getUnitTrait player;
 
-//ÔÚÊ¿±ø±³ĞÄÖĞÌí¼ÓÌ½À×Æ÷ 
+// åœ¨å£«å…µèƒŒå¿ƒä¸­æ·»åŠ æ¢é›·å™¨ 
 _soldier addItemToVest "itemGPS";
 
-//¸Ä±äÎïÌå³ß´ç,²»ÊÊÓÃÓÚĞŞ¸Ä»î¶¯ÎïÌåµÄ´óĞ¡£¬ÒòÎªÕâ»áÔÚÎïÌå±ä»¯ºóÏÂÒ»Ö¡»Ö¸´Ô­Ê¼´óĞ¡¡£
-this setObjectScale 10; //ÏŞÖÆÎª0.0001~65504±¶
-//³Ö¾ÃĞÔµÄ¸Ä±äÃû³Æ½ĞmyUnitµÄµ¥Î»µÄ´óĞ¡,µ«×¢Òâ´Ë¹¦ÄÜÓÃÓÚ¶àÈËÓÎÏ·Ê±´óÁ¿µ¥Î»»áÑÏÖØÓ°ÏìĞÔÄÜ£¬Çë½÷É÷Ê¹ÓÃ¡£
-addMissionEventHandler ["EachFrame",{
+// æ”¹å˜ç‰©ä½“å°ºå¯¸, ä¸é€‚ç”¨äºä¿®æ”¹æ´»åŠ¨ç‰©ä½“çš„å¤§å°ï¼Œå› ä¸ºè¿™ä¼šåœ¨ç‰©ä½“å˜åŒ–åä¸‹ä¸€å¸§æ¢å¤åŸå§‹å¤§å°ã€‚
+this setObjectScale 10; // é™åˆ¶ä¸º0.0001~65504å€
+// æŒä¹…æ€§çš„æ”¹å˜åç§°å«myUnitçš„å•ä½çš„å¤§å°, ä½†æ³¨æ„æ­¤åŠŸèƒ½ç”¨äºå¤šäººæ¸¸æˆæ—¶å¤§é‡å•ä½ä¼šä¸¥é‡å½±å“æ€§èƒ½ï¼Œè¯·è°¨æ…ä½¿ç”¨ã€‚
+addMissionEventHandler ["EachFrame", {
 	myUnit setObjectScale 2;
 }];
-//¸Ä±äÎïÌåÖÊÁ¿,ÖÊÁ¿ÓëÔ­±¾ÖÊÁ¿Ïà²îÌ«¶àÊ±,³µÁ¾ºÍ½ÇÉ«µÄÒÆ¶¯¿ÉÄÜ»á³öÏÖÒì³£,Ó¦¸ÃÌáÇ°»ñÈ¡Ô­±¾ÖÊÁ¿
+// æ”¹å˜ç‰©ä½“è´¨é‡, è´¨é‡ä¸åŸæœ¬è´¨é‡ç›¸å·®å¤ªå¤šæ—¶, è½¦è¾†å’Œè§’è‰²çš„ç§»åŠ¨å¯èƒ½ä¼šå‡ºç°å¼‚å¸¸, åº”è¯¥æå‰è·å–åŸæœ¬è´¨é‡
 _Object setMass 10;
-//»ñÈ¡ÎïÌåÖÊÁ¿
+// è·å–ç‰©ä½“è´¨é‡
 getMass _object; 
 
-//¿ªÃÅ(½¨Öş):¶ÔÏó animate [¶¯»­ÃÅÃû³Æ,½×¶Î(0~1),ËÙ¶È];
-_build animate ["Door_1_rot",1];
-//ÎŞÏßµçÒÔ¼°¶Ô»°:
-player groupChat "Hi there";//Ğ¡¶ÓÍ¨Ñ¶£¬ÂÌÉ« 1"Hi there"
-player sideChat "Show this text";//ÎŞÏßµçÍ¨Ñ¶ÕóÓªÆµµÀµÄÍ¨»°£¬À¶É« Alpha 1-1 "Show this text" 
-player globalChat "globalChat";//È«ÇòÆµµÀ(²»Ê¹ÓÃÉè±¸)µÄÍ¨»°£¬°×É« OPFOR"globalChat"
-player systemChat "ÕâÊÇÏµÍ³ÌáÊ¾";//»ÒÉ«£¬Ã»ÓĞÇ°×º
-vehicle player vehicleChat "³µÁ¾ÆµµÀ";//³ÈÉ« ·ÉĞĞÔ± "³µÁ¾ÆµµÀ"
-player commandChat "Show this text"; //Ö¸»ÓÆµµÀ »ÆÉ« Alpha 1-1 1 "Show this text"
+// å¼€é—¨(å»ºç­‘):å¯¹è±¡ animate [åŠ¨ç”»é—¨åç§°, é˜¶æ®µ(0~1), é€Ÿåº¦];
+_build animate ["Door_1_rot", 1];
+// æ— çº¿ç”µä»¥åŠå¯¹è¯:
+player groupChat "Hi there"; // å°é˜Ÿé€šè®¯ï¼Œç»¿è‰² 1"Hi there"
+player sideChat "Show this text"; // æ— çº¿ç”µé€šè®¯é˜µè¥é¢‘é“çš„é€šè¯ï¼Œè“è‰² Alpha 1-1 "Show this text" 
+player globalChat "globalChat"; // å…¨çƒé¢‘é“(ä¸ä½¿ç”¨è®¾å¤‡)çš„é€šè¯ï¼Œç™½è‰² OPFOR"globalChat"
+player systemChat "è¿™æ˜¯ç³»ç»Ÿæç¤º"; // ç°è‰²ï¼Œæ²¡æœ‰å‰ç¼€
+vehicle player vehicleChat "è½¦è¾†é¢‘é“"; // æ©™è‰² é£è¡Œå‘˜ "è½¦è¾†é¢‘é“"
+player commandChat "Show this text"; // æŒ‡æŒ¥é¢‘é“ é»„è‰² Alpha 1-1 1 "Show this text"
 
 (leader player) groupchat "text";
 
-//×Ô¶¨ÒåÎŞÏßµçÆµµÀ radioChannelCreate[ÑÕÉ«Êı×é, ±êÇ©,ÀàĞÍ("%UNIT_NAME":ÏÔÊ¾µ¥Î»ĞÕÃû "%CHANNEL_LABEL":ÏÔÊ¾ÆµµÀ±êÇ©),¿ÉÒÔ½ÓÊÕºÍ·¢ËÍÏûÏ¢µÄµ¥Î»ÁĞ±í]
-//Íæ¼ÒÊ¹ÓÃside_2£¬ÑÕÉ«Í¬ÑùÎª°×É«£¬µ«Ëµ»°Ê±Ö»ÏÔÊ¾µçÌ¨Ãû³Æ£¬µçÌ¨Ãû³ÆÉèÖÃÎª½ÇÉ«Ãû×Ö¡£
-side_1 = radioChannelCreate [[1, 1, 1, 1], "Direct Chat", "%UNIT_NAME", [WS1,WS2,leader player,player]];
-//ÏÔÊ¾×Ô¶¨ÒåÃû³Æ
+// è‡ªå®šä¹‰æ— çº¿ç”µé¢‘é“ radioChannelCreate[é¢œè‰²æ•°ç»„, æ ‡ç­¾, ç±»å‹("%UNIT_NAME":æ˜¾ç¤ºå•ä½å§“å "%CHANNEL_LABEL":æ˜¾ç¤ºé¢‘é“æ ‡ç­¾), å¯ä»¥æ¥æ”¶å’Œå‘é€æ¶ˆæ¯çš„å•ä½åˆ—è¡¨]
+// ç©å®¶ä½¿ç”¨side_2ï¼Œé¢œè‰²åŒæ ·ä¸ºç™½è‰²ï¼Œä½†è¯´è¯æ—¶åªæ˜¾ç¤ºç”µå°åç§°ï¼Œç”µå°åç§°è®¾ç½®ä¸ºè§’è‰²åå­—ã€‚
+side_1 = radioChannelCreate [[1, 1, 1, 1], "Direct Chat", "%UNIT_NAME", [WS1, WS2, leader player, player]];
+// æ˜¾ç¤ºè‡ªå®šä¹‰åç§°
 player_radio = radioChannelCreate [[1, 1, 1, 1], "(Jackson)", "%CHANNEL_LABEL", units player];
-WS1 customChat [side_1, "Bout fucking time you bundas" ];
-player customChat [side_2, "got here!" ];
+WS1 customChat [side_1, "Bout fucking time you bundas"];
+player customChat [side_2, "got here!"];
 /* 
-	customChat [side_1, "" ];
-	WS1(µ¥Î»ĞÕÃû) "Bout fucking time you bundas got here!"
+	customChat [side_1, ""];
+	WS1(å•ä½å§“å) "Bout fucking time you bundas got here!"
 */
-//Ä£ÄâÔØ¾ßµçÌ¨
+// æ¨¡æ‹Ÿè½½å…·ç”µå°
 side_2 = radioChannelCreate [[1, 0.8, 0, 1], "Custom_2", "%UNIT_NAME", units player];
-//½«µ¥Ôª´Ó×Ô¶¨ÒåÆµµÀÉ¾³ı
+// å°†å•å…ƒä»è‡ªå®šä¹‰é¢‘é“åˆ é™¤
 side_1 radioChannelRemove [blufor_unit_1, blufor_unit_2];
-//½«µ¥ÔªÌí¼Óµ½×Ô¶¨ÒåÆµµÀ
-side_1 radioChannelAdd [player,_unit];
+// å°†å•å…ƒæ·»åŠ åˆ°è‡ªå®šä¹‰é¢‘é“
+side_1 radioChannelAdd [player, _unit];
 
 
-//°´ÕÕ¸ø¶¨Ê±¼äÕ¹Ê¾Ò»¶¨µÄ×ÖÄ»
+// æŒ‰ç…§ç»™å®šæ—¶é—´å±•ç¤ºä¸€å®šçš„å­—å¹•
 [
-	["Speaker1", "Subtitle1", 0],
-	["Speaker2", "Subtitle2", 5],
-	["Speaker3", "Subtitle3", 10],
-	["Ëµ»°µÄÈË", "×ÖÄ¸", 15]
-] spawn BIS_fnc_EXP_camp_playSubtitles; //displays 4 subtitles with 5 seconds between them
-
-//¿ÉÒÔÍ¨¹ı´ËÃüÁîÇ¿ÖÆ¹Ø±Õ×ÖÄ»
+	["Speaker1", "Subtitle1", 0], 
+	["Speaker2", "Subtitle2", 5], 
+	["Speaker3", "Subtitle3", 10], 
+	["è¯´è¯çš„äºº", "å­—æ¯", 15]
+] spawn BIS_fnc_EXP_camp_playSubtitles; // displays 4 subtitles with 5 seconds between them
+["Speaker1", "Subtitle1"] call BIS_fnc_showSubtitle;
+// å¯ä»¥é€šè¿‡æ­¤å‘½ä»¤å¼ºåˆ¶å…³é—­å­—å¹•
 BIS_fnc_EXP_camp_playSubtitles_terminate = true;
 
-//¼ì²éÒ»¸öµ¥Î»ÊÇ·ñÓĞ¸ø¶¨µÄÎäÆ÷ÔÚÊÖÉÏ»ò±³²¿£¬±³ĞÄ±³°ü²»¼Ç¡£ÀıÎªMX ACOºìÉ«¡£
-if !(player hasWeapon "arifle_MX_ACO_pointer_F") then { systemChat "Ëû´øÓĞÎäÆ÷£¡"};
+// æ£€æŸ¥ä¸€ä¸ªå•ä½æ˜¯å¦æœ‰ç»™å®šçš„æ­¦å™¨åœ¨æ‰‹ä¸Šæˆ–èƒŒéƒ¨ï¼ŒèƒŒå¿ƒèƒŒåŒ…ä¸è®°ã€‚ä¾‹ä¸ºMX ACOçº¢è‰²ã€‚
+if !(player hasWeapon "arifle_MX_ACO_pointer_F") then {systemChat "ä»–å¸¦æœ‰æ­¦å™¨ï¼"};
 
-/*=================================ÔØ¾ß================================*/
-//ÔÚÕ½³¡ÉÏÉèÖÃÒ»¸ö·ÏÆú³µÁ¾£¬ËüµÄÅÚËşÄ¬ÈÏÎ»ÖÃ»á¿´ÆğÀ´ºÜ²»Éú¶¯£¬ÎÒÃÇ¿ÉÒÔÉè¶¨Ò»¸öÄ¿±ê£¬ÈÃËü¿´ÆğÀ´ÊÇÔÚ×÷Õ½Ê±±»»ÙµôµÄ¡£
-soldierone doWatch eastsoldier; //ÅÚÊÖsoldierone¿´ÏòµĞÈËÊ¿±øeastsoldierµÄÎ»ÖÃ
-soldierone doWatch markerPos "Marker_0"; //Ê¿±ø¿´ÏòµØÍ¼±ê¼Ç±äÁ¿Mraker_0µÄÎ»ÖÃ
-//ÉèÖÃÒ»¸ö´¥·¢Æ÷£¬ÈÃ¸ÃÊ¿±øÓĞÊ±¼äÃé×¼ËûµÄÄ¿±ê£¬Ëæºó£¬´¥·¢Æ÷ÉúĞ§¡£µ¥Î»ËÀÍö£¬Ò»¸ö·ÏÆúµÄ×°¼×³µ¡£
-_house1 setDamage [1, false];//false,Ìø¹ıÆÆ»µĞ§¹û
-//µ«Õâ²»ÊÇ×î¸ßĞ§µÄ×ö·¨,ÎªÁËÓÅ»¯³¡¾°,Ó¦¸ÃÊ¹ÓÃ¼òµ¥¶ÔÏó
-this animate ["mainturret",rad 290,true]; //Ğı×ªÅÚËş
-this animate ["maingun",rad 10,true]; //Éè¶¨ÎäÆ÷Ñö½Ç
-//Éè¶¨ÆÆËğÎÆÀí,ÎÆÀí¿ÉÒÔÔÚÔØ¾ßµÄpboÖĞ¿´µ½,Ã¿¸öÔØ¾ß¶¼ÓĞ¶ÔÓ¦µÄÆÆËğÎÆÀí(ºó×ºÎªdestructµÄrvmatÎÄ¼ş)£¬²»Í¬ÔØ¾ßÒ²¿ÉÒÔÍ¨ÓÃ,µ¥Î»ÁË·á¸»ĞÔ½¨ÒéÊ¹ÓÃ¶àÑùµÄÎÆÀí
-{this setObjectMaterial [_foreachindex,_x];} foreach [ 
+/*=================================è½½å…·================================*/
+// åœ¨æˆ˜åœºä¸Šè®¾ç½®ä¸€ä¸ªåºŸå¼ƒè½¦è¾†ï¼Œå®ƒçš„ç‚®å¡”é»˜è®¤ä½ç½®ä¼šçœ‹èµ·æ¥å¾ˆä¸ç”ŸåŠ¨ï¼Œæˆ‘ä»¬å¯ä»¥è®¾å®šä¸€ä¸ªç›®æ ‡ï¼Œè®©å®ƒçœ‹èµ·æ¥æ˜¯åœ¨ä½œæˆ˜æ—¶è¢«æ¯æ‰çš„ã€‚
+soldierone doWatch eastsoldier; // ç‚®æ‰‹soldieroneçœ‹å‘æ•Œäººå£«å…µeastsoldierçš„ä½ç½®
+soldierone doWatch markerPos "Marker_0"; // å£«å…µçœ‹å‘åœ°å›¾æ ‡è®°å˜é‡Mraker_0çš„ä½ç½®
+// è®¾ç½®ä¸€ä¸ªè§¦å‘å™¨ï¼Œè®©è¯¥å£«å…µæœ‰æ—¶é—´ç„å‡†ä»–çš„ç›®æ ‡ï¼Œéšåï¼Œè§¦å‘å™¨ç”Ÿæ•ˆã€‚å•ä½æ­»äº¡ï¼Œä¸€ä¸ªåºŸå¼ƒçš„è£…ç”²è½¦ã€‚
+soldierone setDamage [1, false]; // false, è·³è¿‡ç ´åæ•ˆæœ
+// ä½†è¿™ä¸æ˜¯æœ€é«˜æ•ˆçš„åšæ³•, ä¸ºäº†ä¼˜åŒ–åœºæ™¯, åº”è¯¥ä½¿ç”¨ç®€å•å¯¹è±¡
+this animate ["mainturret", rad 290, true]; // æ—‹è½¬ç‚®å¡”
+this animate ["maingun", rad 10, true]; // è®¾å®šæ­¦å™¨ä»°è§’
+// è®¾å®šç ´æŸçº¹ç†, çº¹ç†å¯ä»¥åœ¨è½½å…·çš„pboä¸­çœ‹åˆ°, æ¯ä¸ªè½½å…·éƒ½æœ‰å¯¹åº”çš„ç ´æŸçº¹ç†(åç¼€ä¸ºdestructçš„rvmatæ–‡ä»¶)ï¼Œä¸åŒè½½å…·ä¹Ÿå¯ä»¥é€šç”¨, å•ä½äº†ä¸°å¯Œæ€§å»ºè®®ä½¿ç”¨å¤šæ ·çš„çº¹ç†
+{this setObjectMaterial [_foreachindex, _x];} foreach 
+[
 	"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body_destruct.rvmat", 
 	"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret_destruct.rvmat", 
 	"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks_destruct.rvmat"
 ];
 
-//Ó¦ÓÃÓÚ³õÊ¼»¯£¬½«µØÍ¼Îï¼ş×ª»¯Îª¼òµ¥¶ÔÏó(ÊÊÓÃÓÚÑ¡ÏîÖĞÃ»ÓĞµÄ¶ÔÏó£¬²»ÊÊÓÃÓÚÈËÎï¡¢×°±¸¡¢´¥·¢Æ÷Ä£¿é¡£Ê¹ÓÃÔÚ½¨ÖşÊ±£¬ÃÅ»áÎŞ·¨¿ªÆô
+// åº”ç”¨äºåˆå§‹åŒ–ï¼Œå°†åœ°å›¾ç‰©ä»¶è½¬åŒ–ä¸ºç®€å•å¯¹è±¡(é€‚ç”¨äºé€‰é¡¹ä¸­æ²¡æœ‰çš„å¯¹è±¡ï¼Œä¸é€‚ç”¨äºäººç‰©ã€è£…å¤‡ã€è§¦å‘å™¨æ¨¡å—ã€‚ä½¿ç”¨åœ¨å»ºç­‘æ—¶ï¼Œé—¨ä¼šæ— æ³•å¼€å¯
 _type = typeOf this;
 _pos = getPosWorld this;
 _dir = getDir this;
@@ -161,833 +171,985 @@ _object setPosWorld _pos;
 _object setVectorDirAndUp _vectorDirUp;
 _object setdir _dir;
 
-//É¾³ıÖ¸¶¨ÔØ¾ß£¬Èç¹ûÔØ¾ßÄÚÈÔÓĞ³ÉÔ±,ËûÃÇ¾Í±»ÈÓÔÚÔ­µØ
+// åˆ é™¤æŒ‡å®šè½½å…·ï¼Œå¦‚æœè½½å…·å†…ä»æœ‰æˆå‘˜, ä»–ä»¬å°±è¢«æ‰”åœ¨åŸåœ°
 deleteVehicle _Vehicle
-//É¾³ıÓĞ³ÉÔ±µÄ³µÁ¾Ê±£¬Ó¦¸ÃÊ¹ÓÃ¡£
+// åˆ é™¤æœ‰æˆå‘˜çš„è½¦è¾†æ—¶ï¼Œåº”è¯¥ä½¿ç”¨ã€‚
 {_car deleteVehicleCrew _x} forEach crew _car;
 deleteVehicle _car;
-//´Ó2.06°æ±¾¿ªÊ¼¿ÉÓÃ´ËÃüÁîÉ¾³ı³ÉÔ±
+// ä»2.06ç‰ˆæœ¬å¼€å§‹å¯ç”¨æ­¤å‘½ä»¤åˆ é™¤æˆå‘˜
 DeleteVehicleCrew _vehicle;
 
-//ÅÉÖ¸Ê¿±ø×÷ÎªÔØ¾ß¼İÊ»Ô±£¬ÔÚ´Ë´úÂëÉúĞ§ÏÂ£¬ÆäËûÈË½øÈëÔØ¾ßÊ±½«²»ÔÙÑ¡Ôñ¼İÊ»Ô±
+// æ´¾æŒ‡å£«å…µä½œä¸ºè½½å…·é©¾é©¶å‘˜ï¼Œåœ¨æ­¤ä»£ç ç”Ÿæ•ˆä¸‹ï¼Œå…¶ä»–äººè¿›å…¥è½½å…·æ—¶å°†ä¸å†é€‰æ‹©é©¾é©¶å‘˜
 _soldier1 assignAsDriver _tank;
-//·ÖÅäÒ»¸öµ¥Î»×÷Îª³µÁ¾µÄ³ÉÔ±¡£ÓëorderGetInÒ»ÆğÊ¹ÓÃÈÃ³ÉÔ±½øÈëÌØ¶¨³µÁ¾¡£ÔÚÊ¹ÓÃ´ËÃüÁîÖ®Ç°£¬µ¥Î»²»ÄÜ½øÈë³µÁ¾µÄ¡£
+// åˆ†é…ä¸€ä¸ªå•ä½ä½œä¸ºè½¦è¾†çš„æˆå‘˜ã€‚ä¸orderGetInä¸€èµ·ä½¿ç”¨è®©æˆå‘˜è¿›å…¥ç‰¹å®šè½¦è¾†ã€‚åœ¨ä½¿ç”¨æ­¤å‘½ä»¤ä¹‹å‰ï¼Œå•ä½ä¸èƒ½è¿›å…¥è½¦è¾†çš„ã€‚
 _soldier1 assignAsCargo _truck;
-·Ö//Åä»õÎïË÷Òı£¬ÒÔĞ¡ÄñÖ±Éı»úÎªÀı£¬0,1Á½¸öÎ»ÖÃÎªÖ±Éı»úºó×ù£¬3,4Îª×ó²à³¤µÊ£¬2 5·´Ö®¡£
+// åˆ†é…è´§ç‰©ç´¢å¼•ï¼Œä»¥å°é¸Ÿç›´å‡æœºä¸ºä¾‹ï¼Œ0, 1ä¸¤ä¸ªä½ç½®ä¸ºç›´å‡æœºååº§ï¼Œ3, 4ä¸ºå·¦ä¾§é•¿å‡³ï¼Œ2 5åä¹‹ã€‚
 player assignAsCargoIndex [resuceHeil, 1];
-//ÃüÁîµ¥Î»ÏÂ³µ,¿ÉÒÔºÍorderGetIn true·´¸´Ê¹ÓÃ
+// å‘½ä»¤å•ä½ä¸‹è½¦, å¯ä»¥å’ŒorderGetIn trueåå¤ä½¿ç”¨
 [_unitOne, _unitTwo] orderGetIn true;
 [_unitOne, _unitTwo] orderGetIn false;
-//µ«½¨ÒéÊ¹ÓÃallowGetInÃüÁî
+// ä½†å»ºè®®ä½¿ç”¨allowGetInå‘½ä»¤
 units player allowGetIn false;
 
-//Ä¿±êÊ¿±øÁ¢¼´½øÈëÔØ¾ß£»Ìø¹ı½øÈë¶¯»­ºÍÂ·³Ì,¿ÉÒÔÊ¹ÓÃ´úÌæÓï·¨[ÔØ¾ß,Î»ÖÃË÷Òı]À´Ç¿ÖÆµ¥Î»½øÈëÄ³¸ö×ùÎ»
+// ç›®æ ‡å£«å…µç«‹å³è¿›å…¥è½½å…·ï¼›è·³è¿‡è¿›å…¥åŠ¨ç”»å’Œè·¯ç¨‹, å¯ä»¥ä½¿ç”¨ä»£æ›¿è¯­æ³•[è½½å…·, ä½ç½®ç´¢å¼•]æ¥å¼ºåˆ¶å•ä½è¿›å…¥æŸä¸ªåº§ä½
 _soldier moveInCargo _jeep; 
-_soldier moveInCargo [_vehicle, 2];//½øÈëµÚÈı¸öÎ»ÖÃ¶ø²»ÊÇÄ¬ÈÏµÄµÚÒ»¸ö
+_soldier moveInCargo [_vehicle, 2]; // è¿›å…¥ç¬¬ä¸‰ä¸ªä½ç½®è€Œä¸æ˜¯é»˜è®¤çš„ç¬¬ä¸€ä¸ª
 
-//µ¥Î»Á¢¼´½øÈëÔØ¾ßµÄµÚÒ»¿ÉÓÃÎ»ÖÃ£ºÓëĞ¡¶Ó³¤ÃüÁîµÄÎ»ÖÃ¡¢3DENºÍÖæË¹µÄÍÏ¶¯½øÈëĞ§¹ûÏàÍ¬
-//°´ÕÕ¼İÊ»Ô±(moveInDriver) ¡ú Ö¸»Ó¹Ù(moveInCommander) ¡ú ÅÚÊÖ(moveInGunner) ¡ú ÅÚËş(moveInTurret) ¡ú ³Ë¿Í(moveInCargo)µÄË³Ğò½øÈë
+// å•ä½ç«‹å³è¿›å…¥è½½å…·çš„ç¬¬ä¸€å¯ç”¨ä½ç½®ï¼šä¸å°é˜Ÿé•¿å‘½ä»¤çš„ä½ç½®ã€3DENå’Œå®™æ–¯çš„æ‹–åŠ¨è¿›å…¥æ•ˆæœç›¸åŒ
+// æŒ‰ç…§é©¾é©¶å‘˜(moveInDriver) â†’ æŒ‡æŒ¥å®˜(moveInCommander) â†’ ç‚®æ‰‹(moveInGunner) â†’ ç‚®å¡”(moveInTurret) â†’ ä¹˜å®¢(moveInCargo)çš„é¡ºåºè¿›å…¥
 player moveInAny _tank;
-//Ëø¶¨ÔØ¾ß£¬×èÖ¹Íæ¼Ò½ø³ö£¬µ«¿ÉÒÔÓÉÍÅ¶Ó¶Ó³¤µÄÖ¸Áî£¬ºÍÔËÊäĞ¶ÔØÂ·µãÀ´ÈÃÍæ¼Ò³öÈ¥¡£
+// é”å®šè½½å…·ï¼Œé˜»æ­¢ç©å®¶è¿›å‡ºï¼Œä½†å¯ä»¥ç”±å›¢é˜Ÿé˜Ÿé•¿çš„æŒ‡ä»¤ï¼Œå’Œè¿è¾“å¸è½½è·¯ç‚¹æ¥è®©ç©å®¶å‡ºå»ã€‚
 _veh lock true;
-//Ëø¶¨ÔØ¾ßµÄÌØ¶¨×ùÎ»
-_veh lockCargo [0 ,true];
-//µ¯³öËùÓĞ³Ë¿Í£¬±ØĞëÊÂÏÈÔÊĞíÊ¿±øÀë¿ªÔØ¾ß£¬·ñÔòËûÃÇ»áÔÙ´Î³ËÉÏ
-{ moveOut _x ; _x leaveVehicle _vehicle } forEach units _grp;
+// é”å®šè½½å…·çš„ç‰¹å®šåº§ä½
+_veh lockCargo [0, true];
+// å¼¹å‡ºæ‰€æœ‰ä¹˜å®¢ï¼Œå¿…é¡»äº‹å…ˆå…è®¸å£«å…µç¦»å¼€è½½å…·ï¼Œå¦åˆ™ä»–ä»¬ä¼šå†æ¬¡ä¹˜ä¸Š
+{moveOut _x; _x leaveVehicle _vehicle} forEach units _grp;
 _vehicle lockCargo [0, true];
-//ÔØ¾ßÒıÇæ¹Ø±Õ
-_heli action["engineOFF", _heli];
-//ÔØ¾ßÒıÇæ¿ªÆôµÄÁ½ÖÖ·½Ê½
-_vehicle action["engineON", vehicle _vehicle];
+// è½½å…·å¼•æ“å…³é—­
+_heli action ["engineOFF", _heli];
+// è½½å…·å¼•æ“å¼€å¯çš„ä¸¤ç§æ–¹å¼
+_vehicle action ["engineON", vehicle _vehicle];
 _vehicle engineon true;
-//´´½¨Ò»¸ö¿ªÊ¼Ê±ÔÚµØÃæµÄÖ±Éı»ú
+// åˆ›å»ºä¸€ä¸ªå¼€å§‹æ—¶åœ¨åœ°é¢çš„ç›´å‡æœº
 [this, 0] call BIS_fnc_setHeight;
 this engineOn true;
 
-//Àë¿ªÔØ¾ß ²ÎÊı¿ÉÒÔÊÇunit»òÕßgroup
+// ç¦»å¼€è½½å…· å‚æ•°å¯ä»¥æ˜¯unitæˆ–è€…group
 _unit leaveVehicle _vehicle;
 _grp leaveVehicle _vehicle;
 
-//Îª³µÁ¾ÉÏµÄÃÅÖÆ×÷¶¯»­¡£[ÃÅÃû£¬½×¶Î£¬Ë²Ê±]
-_object animateDoor ["Door_L", 1, true]; //Á¢¼´´ò¿ª×óÃÅ£¬ÎŞ¶¯»­
-_object animateDoor ["Door_L", 0]; //¹Ø±ÕÓÒÃÅ
+// ä¸ºè½¦è¾†ä¸Šçš„é—¨åˆ¶ä½œåŠ¨ç”»ã€‚[é—¨åï¼Œé˜¶æ®µï¼Œç¬æ—¶]
+_object animateDoor ["Door_L", 1, true]; // ç«‹å³æ‰“å¼€å·¦é—¨ï¼Œæ— åŠ¨ç”»
+_object animateDoor ["Door_L", 0]; // å…³é—­å³é—¨
+// å½“AnimateSourceåŠ¨ç”»å±æ€§sourceä¸ºdooræ—¶ï¼Œå¿…é¡»æ”¹ç”¨animateDoorï¼Œå¦åˆ™æ— æ³•å¯ç”¨é—¨åŠ¨ç”»ï¼Œæ­¤å‘½ä»¤æ— æ³•åŠå¼€é—¨ï¼Œå½“ç±»å‹ä¸º"User"æ—¶å¿…é¡»ä½¿ç”¨animateSource
+this animateDoor ["Door_6_Source", 1];
+// å¸¦æœ‰â€œhitâ€æ§åˆ¶å™¨çš„æºå¯ä»¥ä½¿ç”¨å°† setHitPointDamage å‘½ä»¤åº”ç”¨äº hitpoint å±æ€§ä¸­åŒ…å«çš„åç§°è¿›è¡ŒåŠ¨ç”»å¤„ç†ã€‚0~1ä»£è¡¨ä¼¤å®³
+vehicle player setHitPointDamage ["hitEngine2", 1.0];
 
-//¸ü¸Ä½¢Í§»ú¿â´óÃÅ×´Ì¬
-[this, 1] call BIS_fnc_destroyer01OperateHangarDoors; //to open doors
-[this, 0] call BIS_fnc_destroyer01OperateHangarDoors; //to close doors
+// æ›´æ”¹èˆ°è‰‡æœºåº“å¤§é—¨çŠ¶æ€
+[this, 1] call BIS_fnc_destroyer01OperateHangarDoors; // to open doors
+[this, 0] call BIS_fnc_destroyer01OperateHangarDoors; // to close doors
 
 
-//´ò¿ª³µÁ¾³µµÆÊÊÓÃÓÚÎŞÈËÔØ¾ß
+// æ‰“å¼€è½¦è¾†è½¦ç¯é€‚ç”¨äºæ— äººè½½å…·
 _vehicle setPilotLight true;
-//´ò¿ª·À×²µÆ
+// æ‰“å¼€é˜²æ’ç¯
 _heli setCollisionLight true;
-//ÉèÖÃÔØ¾ßµ¯Ò©
+// è®¾ç½®è½½å…·å¼¹è¯
 _vehicle setvehicleammo 1;
 
-//ÔÚ¿ÕÖĞÉú³ÉÖ±Éı»ú
-fighter_0 = createVehicle ["O_Plane_Fighter_02_F", position player, [], 0, "FLY"];
-"O_Pilot_F" createUnit  [ getMarkerPos  "marker_0", Grp_CSAT,"grp_CSAT selectLeader this;this moveInDriver fighter_0"];
-//Èç¹û¿ÉÄÜ£¬½«ÔØ»õ³µÁ¾×°ÔØµ½³µÁ¾ÄÚ£¬¸ù¾İ³µÁ¾ÊÇ·ñÄÜ¹»×°ÔØ·µ»Ø²¼¶ûÖµ¡£Ò²¿ÉÓÃÓÚĞ¶ÔØÌØ¶¨×°ÔØ³µÁ¾»òËùÓĞ×°ÔØ³µÁ¾¡£
+// åœ¨ç©ºä¸­ç”Ÿæˆé£æœº
+private _plane = createVehicle ["O_Plane_Fighter_02_F", getPosWorld player, [], 0, "FLY"];
+// åˆ›å»ºè½½å…·æˆå‘˜
+createVehicleCrew _plane;
+// å¦‚æœå¯èƒ½ï¼Œå°†è½½è´§è½¦è¾†è£…è½½åˆ°è½¦è¾†å†…ï¼Œæ ¹æ®è½¦è¾†æ˜¯å¦èƒ½å¤Ÿè£…è½½è¿”å›å¸ƒå°”å€¼ã€‚ä¹Ÿå¯ç”¨äºå¸è½½ç‰¹å®šè£…è½½è½¦è¾†æˆ–æ‰€æœ‰è£…è½½è½¦è¾†ã€‚
 blackfish setVehicleCargo offroad;
-private _success = objNull setVehicleCargo offroad;//Ğ¶ÔØÌØ¶¨×°ÔØµÄ³µÁ¾(Èç¹û´Ó¸ß¿ÕµôÂä½«½µÂäÉ¡)
-private _success = blackfish setVehicleCargo objNull;//Ğ¶ÔØËùÓĞ³µÁ¾(Èç¹û´Ó¸ß¿ÕµôÂä£¬½«»á½µÂäÉ¡)
+private _success = objNull setVehicleCargo offroad; // å¸è½½ç‰¹å®šè£…è½½çš„è½¦è¾†(å¦‚æœä»é«˜ç©ºæ‰è½å°†é™è½ä¼)
+private _success = blackfish setVehicleCargo objNull; // å¸è½½æ‰€æœ‰è½¦è¾†(å¦‚æœä»é«˜ç©ºæ‰è½ï¼Œå°†ä¼šé™è½ä¼)
 
-//Ç¿ÖÆÉè¶¨³µÁ¾µÄÈÈ¶È 0ÊÇ×îÀä×´Ì¬£¬1ÊÇ×îÈÈ×´Ì¬¡£Èı¸ö²ÎÊı·Ö±ğÊÇ[ÒıÇæ/³µÉí ,ÂÄ´ø/³µÂÖ ,ÅÚËş]
+// å¼ºåˆ¶è®¾å®šè½¦è¾†çš„çƒ­åº¦ 0æ˜¯æœ€å†·çŠ¶æ€ï¼Œ1æ˜¯æœ€çƒ­çŠ¶æ€ã€‚ä¸‰ä¸ªå‚æ•°åˆ†åˆ«æ˜¯[å¼•æ“/è½¦èº«, å±¥å¸¦/è½¦è½®, ç‚®å¡”]
 this setVehicleTiPars [1, 1, 1];
 {_x setVehicleTiPars [1, 1, 1]} forEach vehicles;
-/*====================================================Â·µãÆª==============================================*/
-//µ¥Î»±»ÃüÁîÒÆ¶¯µ½Ö¸¶¨Î»ÖÃ(±ØĞëÎªµØÍ¼±ê¼Ç±äÁ¿£¬·ñÔòÏÂÊô½«¾Ü¾ø)
+/*====================================================è·¯ç‚¹ç¯‡==============================================*/
+// å•ä½è¢«å‘½ä»¤ç§»åŠ¨åˆ°æŒ‡å®šä½ç½®(å¿…é¡»ä¸ºåœ°å›¾æ ‡è®°å˜é‡ï¼Œå¦åˆ™ä¸‹å±å°†æ‹’ç»)
 [_soldier1, _soldier2] commandMove getMarkerPos "Marker1";
-//µ¥Î»Ö÷¶¯ÏòÖ¸¶¨Î»ÖÃÒÆ¶¯(±ØĞëÎªµØÍ¼±ê¼Ç±äÁ¿£¬·ñÔòÏÂÊô½«¾Ü¾ø)
+// å•ä½ä¸»åŠ¨å‘æŒ‡å®šä½ç½®ç§»åŠ¨(å¿…é¡»ä¸ºåœ°å›¾æ ‡è®°å˜é‡ï¼Œå¦åˆ™ä¸‹å±å°†æ‹’ç»)
 this doMove (getMarkerPos "Marker1");
-//ÃüÁî¸ø¶¨µÄµ¥Î»ÒÆ¶¯µ½¸ø¶¨µÄÎ»ÖÃ(Í¨¹ıÎŞÏßµç)£¬¸ÃÃüÁî²»»á·ÅÖÃ¿É¼ûµÄº½Â·µã±ê¼Ç¡£
-//¿ÉÒÔ½«Ğ¡¶Ó³¤Óë¶ÓÔ±µÄÃüÁî·Ö¿ª£¬ÕâÑù½²»á¿´µ½·¢ËÍÎŞÏßµçÏûÏ¢
+// å‘½ä»¤ç»™å®šçš„å•ä½ç§»åŠ¨åˆ°ç»™å®šçš„ä½ç½®(é€šè¿‡æ— çº¿ç”µ)ï¼Œè¯¥å‘½ä»¤ä¸ä¼šæ”¾ç½®å¯è§çš„èˆªè·¯ç‚¹æ ‡è®°ã€‚
+// å¯ä»¥å°†å°é˜Ÿé•¿ä¸é˜Ÿå‘˜çš„å‘½ä»¤åˆ†å¼€ï¼Œè¿™æ ·è®²ä¼šçœ‹åˆ°å‘é€æ— çº¿ç”µæ¶ˆæ¯
 [_soldier] commandMove getMarkerPos "Marker_0";
 [_soldier1, _soldier2] commandMove getMarkerPos "Marker_0";
 
-//Ìí¼ÓÂ·¾¶µã Î»ÖÃ ÓÅÏÈ¼¶(0Îªµ±Ç°)
+// æ·»åŠ è·¯å¾„ç‚¹ ä½ç½® ä¼˜å…ˆçº§(0ä¸ºå½“å‰)
 Alpha addWaypoint [getposATL w1, 0];
-//ÉèÖÃ±ê¼ÇÂ·¾¶µã²»¿É¼û
+// è®¾ç½®æ ‡è®°è·¯å¾„ç‚¹ä¸å¯è§
 [Alpha, 0] setWaypointVisible false;
-/*================================================µ¥Ôª¿ØÖÆ===========================================*/
-//ÉèÖÃ¶¯»­ËÙ¶È
+/*================================================å•å…ƒæ§åˆ¶/å¯¹è±¡æ“ä½œ===========================================*/
+// ä¸ºç¼–è¾‘ä¸­æ‰€é€‰çš„ç¬¬ä¸€ä¸ªå•ä½æ‰§è¡ŒåŠ¨ç”»
+((get3DENSelected "object") # 0) switchMove "åŠ¨ç”»åç§°";
+
+// è®¾ç½®åŠ¨ç”»é€Ÿåº¦
 _unit setAnimSpeedCoef 1;
 
-//µ¥Î»¼ÓÈë²»´æÔÚµÄĞ¡×é(Àë¿ªµ±Ç°Ğ¡¶Ó)
+// å•ä½åŠ å…¥ä¸å­˜åœ¨çš„å°ç»„(ç¦»å¼€å½“å‰å°é˜Ÿ)
 [_unitOne, _unitTwo] join grpNull;
 
-//½«µ¥Ôª¼ÓÈë¸ø¶¨µÄ×é£¬Èç¹ûÎ»ÖÃ id ¿ÉÓÃ£¬ÔòÊ¹ÓÃ¸Ã×é¡£²»ÌáÊ¾"x ¼ÓÈëÍÅ¶Ó"ÕâÑùµÄÎŞÏßµçÍ¨ĞÅ¡£
+// å°†å•å…ƒåŠ å…¥ç»™å®šçš„ç»„ï¼Œå¦‚æœä½ç½® id å¯ç”¨ï¼Œåˆ™ä½¿ç”¨è¯¥ç»„ã€‚ä¸æç¤º"x åŠ å…¥å›¢é˜Ÿ"è¿™æ ·çš„æ— çº¿ç”µé€šä¿¡ã€‚
 player joinAsSilent [_group, 4];
-//½«ÕóÁĞÖĞµÄËùÓĞµ¥Ôª¾²Ä¬¼ÓÈë¸ø¶¨×é(ÎŞÎŞÏßµçÏûÏ¢)¡£
+// å°†é˜µåˆ—ä¸­çš„æ‰€æœ‰å•å…ƒé™é»˜åŠ å…¥ç»™å®šç»„(æ— æ— çº¿ç”µæ¶ˆæ¯)ã€‚
 [_unitOne, _unitTwo] joinSilent (group player);
 
-//ÉèÖÃÍæ¼ÒÓëÔ­ÏÈÍÅ¶Ó·ÖÀë£¬È»ºó³ÉÎªÍÅ¶Ó¶Ó³¤£¬²¢ÇÒÎªÒ»ºÅÎ»Ê±¡£
-//ÏÈ½¨Á¢µÚÒ»¸öĞ¡¶Ó(Íæ¼Ò²»Îª¶Ó³¤£¬ÍÅ¶ÓºôºÅÄ¬ÈÏAlpha 1-1)£¬È»ºóÉèÖÃ½Å±¾£º
-[player] join grpNull; //Íæ¼Ò½øÈë²»´æÔÚµÄĞ¡×é
-//´ËÊ±´ò¿ªÍÅ¶ÓĞÅÏ¢Ê±·¢ÏÖ£¬Íæ¼Ò»áÏÔÊ¾Alpha 1-2 x.ÍÅ¶Ó¶Ó³¤(xÎªÔ­Ê¼Ğ¡¶ÓµÄĞòºÅ)£¬ÎÒÃÇÔÙÈÃÍæ¼Ò¼ÓÈëÒ»´ÎĞ¡¶Ó
+// è®¾ç½®ç©å®¶ä¸åŸå…ˆå›¢é˜Ÿåˆ†ç¦»ï¼Œç„¶åæˆä¸ºå›¢é˜Ÿé˜Ÿé•¿ï¼Œå¹¶ä¸”ä¸ºä¸€å·ä½æ—¶ã€‚
+// å…ˆå»ºç«‹ç¬¬ä¸€ä¸ªå°é˜Ÿ(ç©å®¶ä¸ä¸ºé˜Ÿé•¿ï¼Œå›¢é˜Ÿå‘¼å·é»˜è®¤Alpha 1-1)ï¼Œç„¶åè®¾ç½®è„šæœ¬ï¼š
+[player] join grpNull; // ç©å®¶è¿›å…¥ä¸å­˜åœ¨çš„å°ç»„
+// æ­¤æ—¶æ‰“å¼€å›¢é˜Ÿä¿¡æ¯æ—¶å‘ç°ï¼Œç©å®¶ä¼šæ˜¾ç¤ºAlpha 1-2 x.å›¢é˜Ÿé˜Ÿé•¿(xä¸ºåŸå§‹å°é˜Ÿçš„åºå·)ï¼Œæˆ‘ä»¬å†è®©ç©å®¶åŠ å…¥ä¸€æ¬¡å°é˜Ÿ
 player joinAs [player, 1];
-//´ËÊ±¾Í»á±äÎª Alpha 1-2 1.ÍÅ¶Ó¶Ó³¤
-//È»ºóÔÙÈÃÆäËû³ÉÔ±¼ÓÈë¼´¿É
-[soldier2,soldier3] join _group;
-//ÉèÖÃÍÅ¶ÓºôºÅ
-group player setGroupId ["Kerry"]; // Kerry 1.ÍÅ¶Ó¶Ó³¤
-//½áºÏÊ¹ÓÃ
+// æ­¤æ—¶å°±ä¼šå˜ä¸º Alpha 1-2 1.å›¢é˜Ÿé˜Ÿé•¿
+// ç„¶åå†è®©å…¶ä»–æˆå‘˜åŠ å…¥å³å¯
+[soldier2, soldier3] join _group;
+// è®¾ç½®å›¢é˜Ÿå‘¼å·
+group player setGroupId ["Kerry"]; // Kerry 1.å›¢é˜Ÿé˜Ÿé•¿
+// ç»“åˆä½¿ç”¨
 [player] join grpNull;
 player joinAs [player, 1];
 group player setGroupId ["Jackson"];
-//ÎªÍæ¼ÒÍÅ¶ÓÑ¡ÔñÒ»¸öÁìµ¼Õß£¬¿ÉÒÔÊÇĞ¡¶ÓÖĞµÄÈÎÒâÒ»ÈË¡£
+// ä¸ºç©å®¶å›¢é˜Ÿé€‰æ‹©ä¸€ä¸ªé¢†å¯¼è€…ï¼Œå¯ä»¥æ˜¯å°é˜Ÿä¸­çš„ä»»æ„ä¸€äººã€‚
 group player selectLeader _soldier1;
 
-//ÇĞ»»Íæ¼ÒµÄÎäÆ÷×ËÌ¬£¬°²È«/¾¯½ä
+// åˆ‡æ¢ç©å®¶çš„æ­¦å™¨å§¿æ€ï¼Œå®‰å…¨/è­¦æˆ’
 player action ["WeaponOnBack", player];
-//ÎªÍæ¼ÒÌí¼ÓÈı¸öµ¯¼ĞÈ»ºóÇ¿ÖÆÖØĞÂ¼ÓÔØ
+// ä¸ºç©å®¶æ·»åŠ ä¸‰ä¸ªå¼¹å¤¹ç„¶åå¼ºåˆ¶é‡æ–°åŠ è½½
 player addMagazine ["30Rnd_65x39_caseless_mag", 3];
 reload player;
-//ÉèÖÃµ¥Î»×ËÌ¬
+// è®¾ç½®å•ä½å§¿æ€
 _soldier setUnitPos "UP";
-//"UP"  	Õ¾Æğ
-//"MIDDLE" 	¹òµØ£¬Èç¹ûµ¥Î»Ã»ÓĞÎäÆ÷£¬Ôò²»»á¹òÏÂ
-//"DOWN"  	ÎÔµ¹
-//"AUTO"	×ÔÖ÷Ñ¡Ôñ×ËÌ¬
+// "UP" 	ç«™èµ·
+// "MIDDLE" 	è·ªåœ°ï¼Œå¦‚æœå•ä½æ²¡æœ‰æ­¦å™¨ï¼Œåˆ™ä¸ä¼šè·ªä¸‹
+// "DOWN" 	å§å€’
+// "AUTO"	è‡ªä¸»é€‰æ‹©å§¿æ€
 
-//ÎªĞ¡¶ÓÉèÖÃ×ËÌ¬£¬Í¬Ê±²»»áÓĞÎŞÏßµçÏûÏ¢
+// ä¸ºå°é˜Ÿè®¾ç½®å§¿æ€ï¼ŒåŒæ—¶ä¸ä¼šæœ‰æ— çº¿ç”µæ¶ˆæ¯
 {_x setUnitPos "MIDDLE"} forEach units player;
 
 
-//ÉèÖÃµ¥Î»¼¼ÄÜ 0~1
+// è®¾ç½®å•ä½æŠ€èƒ½ 0~1
 _soldier setskill 0.7;
-//Ê¿±ø¼àÊÓÄ¿±ê
+// å£«å…µç›‘è§†ç›®æ ‡
 _soldier doWatch player;
-//ÃüÁîÊ¿±ø±ê×¼Ö¸¶¨Ä¿±ê
+// å‘½ä»¤å£«å…µæ ‡å‡†æŒ‡å®šç›®æ ‡
 _ESoldier1 doTarget _WSoldier1;
-//¿ØÖÆµ¥ÔªÕıÔÚ²é¿´µÄÄÚÈİ(Ä¿±ê»òÎ»ÖÃ)¡£Èç¹ûÄ¿±ê±»Ê¹ÓÃ£¬Ëü½«±»ÍêÈ«±©Â¶¡£
+// æ§åˆ¶å•å…ƒæ­£åœ¨æŸ¥çœ‹çš„å†…å®¹(ç›®æ ‡æˆ–ä½ç½®)ã€‚å¦‚æœç›®æ ‡è¢«ä½¿ç”¨ï¼Œå®ƒå°†è¢«å®Œå…¨æš´éœ²ã€‚
 _someSoldier lookAt _otherSoldier;
-//¿ØÖÆµ¥Î»µÄÊÓÏß(Ä¿±ê»òÎ»ÖÃ)¡£Èç¹ûÄ¿±ê±»Ê¹ÓÃ£¬Ëü½«±»ÍêÈ«±©Â¶¡£²¿¶ÓÔÚÄÇÀïÉ¨ÊÓµÄÆµÂÊÈ¡¾öÓÚĞĞÎª¡£
+// æ§åˆ¶å•ä½çš„è§†çº¿(ç›®æ ‡æˆ–ä½ç½®)ã€‚å¦‚æœç›®æ ‡è¢«ä½¿ç”¨ï¼Œå®ƒå°†è¢«å®Œå…¨æš´éœ²ã€‚éƒ¨é˜Ÿåœ¨é‚£é‡Œæ‰«è§†çš„é¢‘ç‡å–å†³äºè¡Œä¸ºã€‚
 _someSoldier glanceAt _otherSoldier;
-//ÃüÁîÊ¿±ø¿ª»ğ
+// å‘½ä»¤å£«å…µå¼€ç«
 _ESoldier1 doFire _WSoldier1;
-//Ç¿ÖÆµ¥Î»¿ª»ğ_unit forceWeaponFire [Ç¹¿Ú ,Ä£Ê½ ]; [¶ÔÏó, Ç¹¿Ú] call BIS_fnc_fire;
-_unit forceWeaponFire [primaryWeapon _unit , currentWeaponMode _unit ];
+// å¼ºåˆ¶å•ä½å¼€ç«_unit forceWeaponFire [æªå£, æ¨¡å¼]; [å¯¹è±¡, æªå£] call BIS_fnc_fire;
+_unit forceWeaponFire [primaryWeapon _unit, currentWeaponMode _unit];
 [BIS_inf, currentMuzzle BIS_inf] call BIS_fnc_fire;
 [BIS_tank, "cannon_120mm"] call BIS_fnc_fire;
-[BIS_tank, "SmokeLauncher"] call BIS_fnc_fire; //Ì¹¿Ë·¢Éäµ¯Ä»
+[BIS_tank, "SmokeLauncher"] call BIS_fnc_fire; // å¦å…‹å‘å°„å¼¹å¹•
 
-//Ö±Éı»ú½µÂä [×é¡¢Î»ÖÃ¡¢Ä¿±ê(Í£»úÆº¶ÔÏó)]
-[group player, [0,0,0], BIS_vehicle] spawn BIS_fnc_wpLand;
+// ç›´å‡æœºé™è½ [ç»„ã€ä½ç½®ã€ç›®æ ‡(åœæœºåªå¯¹è±¡)]
+[group player, [0, 0, 0], BIS_vehicle] spawn BIS_fnc_wpLand;
 
-//½ûÖ¹Ê¿±øÒÆ¶¯
+// ç¦æ­¢å£«å…µç§»åŠ¨
 _soldierOne disableAI "Move";
 
-//Ê¹ÓÃsetCaptiveÃüÁî¿ÉÒÔ×èÖ¹µĞ·½µ¥Î»ÏòÄ¿±êµ¥Î»¿ª»ğ¡£±»ÊÓÎªÊôÓÚÆ½Ãñ£¬µ«ÈÔÈ»»áÉä»÷ËûµÄµĞÈË£¬²»»áÒÆ³ıÎäÆ÷£¬²»»áÓ°ÏìĞ¡¶Ó·ÖÅä£»Èç¹ûµ¥Î»ÊÇ³µÁ¾£¬Ôò±ê¼ÇÖ¸»Ó¹Ù¡£
-_soldier setCaptive  true; // _soldier ¿ÉÒÔÏòµĞÈËÉä»÷£¬µ«µĞÈË²»»á»¹»÷
-_soldier1 setCaptive 1;//ÉèÖÃÊ¿±øÎª·ıÂ²(ÊıÖµ·ÇÁã¼´ÉèÖÃ·ıÂ²)
-//Äú¿ÉÒÔÍ¨¹ıÈ¡Ïû·ıÂ²×´Ì¬ÖØĞÂ¼¤»îµĞÒâ¡£
-_soldier setCaptive  false; // _soldier ½«ÔÙ´Î±»µĞ·½µ¥Î»Éä»÷
-//¶«Î÷·½ CSATÓëNATO¹ØÏµ£¬0ÎªµĞ¶Ô£»1ÎªÓÑºÃ
+// ä½¿ç”¨setCaptiveå‘½ä»¤å¯ä»¥é˜»æ­¢æ•Œæ–¹å•ä½å‘ç›®æ ‡å•ä½å¼€ç«ã€‚è¢«è§†ä¸ºå±äºå¹³æ°‘ï¼Œä½†ä»ç„¶ä¼šå°„å‡»ä»–çš„æ•Œäººï¼Œä¸ä¼šç§»é™¤æ­¦å™¨ï¼Œä¸ä¼šå½±å“å°é˜Ÿåˆ†é…ï¼›å¦‚æœå•ä½æ˜¯è½¦è¾†ï¼Œåˆ™æ ‡è®°æŒ‡æŒ¥å®˜ã€‚
+_soldier setCaptive true; // _soldier å¯ä»¥å‘æ•Œäººå°„å‡»ï¼Œä½†æ•Œäººä¸ä¼šè¿˜å‡»
+_soldier1 setCaptive 1; // è®¾ç½®å£«å…µä¸ºä¿˜è™(æ•°å€¼éé›¶å³è®¾ç½®ä¿˜è™)
+// æ‚¨å¯ä»¥é€šè¿‡å–æ¶ˆä¿˜è™çŠ¶æ€é‡æ–°æ¿€æ´»æ•Œæ„ã€‚
+_soldier setCaptive false; // _soldier å°†å†æ¬¡è¢«æ•Œæ–¹å•ä½å°„å‡»
+// ä¸œè¥¿æ–¹ CSATä¸NATOå…³ç³»ï¼Œ0ä¸ºæ•Œå¯¹ï¼›1ä¸ºå‹å¥½
 east setFriend [west, 1];
 west setFriend [east, 1];
 
-//ÏàÓ¦µÄ±»·ıÂ²Õ¾×Ë
+// ç›¸åº”çš„è¢«ä¿˜è™ç«™å§¿
 _unit switchMove "Acts_JetsShooterIdle"; 
 _unit switchMove "Acts_JetsShooterIdle_m";
 _unit switchMove "Acts_JetsShooterIdle2";
-//¾ÙÊÖ·ÅÔÚºóÄÔÉ×(ÎŞĞèÉèÖÃÖØ¸´£¬µ¥Î»»á±£³ÖÔÚ×îºóÒ»Ö¡)
+// ä¸¾æ‰‹æ”¾åœ¨åè„‘å‹º(æ— éœ€è®¾ç½®é‡å¤ï¼Œå•ä½ä¼šä¿æŒåœ¨æœ€åä¸€å¸§)
 this switchMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
-//ÒÆ³ıµ¥Î»ËùÓĞÎäÆ÷ºÍµ¯¼Ğ
+// ç§»é™¤å•ä½æ‰€æœ‰æ­¦å™¨å’Œå¼¹å¤¹
 removeAllWeapons player;
-//»ğÁ¦Ñ¹ÖÆ
-_soldier doSuppressiveFire tar_1; //µ¥Î»²»¶ÏÉä»÷Ä¿±ê
-//ÉèÖÃµ¯¼ĞÊ£Óà×Óµ¯ µ¥Î» setAmmo [Ç¹¿Ú,ÊıÁ¿]
+// ç«åŠ›å‹åˆ¶
+_soldier doSuppressiveFire tar_1; // å•ä½ä¸æ–­å°„å‡»ç›®æ ‡
+// è®¾ç½®å¼¹å¤¹å‰©ä½™å­å¼¹ å•ä½ setAmmo [æªå£, æ•°é‡]
 bis_miller setAmmo [currentWeapon bis_miller, 0];
-//ÎªÍæ¼ÒÖ÷ÎäÆ÷Ìí¼Óµ¯Ò©
+// ä¸ºç©å®¶ä¸»æ­¦å™¨æ·»åŠ å¼¹è¯
 player addMagazines [primaryWeaponMagazine player select 0, 3];
-//ÒÆ³ıÍæ¼ÒÖ÷ÎäÆ÷µÄËùÓĞµ¯Ò©
-[] spawn {
-	player removeMagazines (currentMagazine player); 
-	sleep 0.1;
-	player removePrimaryWeaponItem (currentMagazine player );  
-};
+// ç§»é™¤ç©å®¶ä¸»æ­¦å™¨çš„æ‰€æœ‰å¼¹è¯
+player removeMagazines (currentMagazine player);
+player removePrimaryWeaponItem (currentMagazine player); 
 
-//Ä¿±êenableGunLightsÊÖµçÍ²/¼¤¹âµÆÄ£Ê½
-//"Auto"         - È¡¾öÓÚÕ½¶·Ä£Ê½
-//"ForceOn"   - Ê¼ÖÕ¿ªÆô
-//"ForceOff" - Ê¼ÖÕ¹Ø±Õ
+
+// ç›®æ ‡enableGunLightsæ‰‹ç”µç­’/æ¿€å…‰ç¯æ¨¡å¼
+// "Auto"		- å–å†³äºæˆ˜æ–—æ¨¡å¼
+// "ForceOn"	- å§‹ç»ˆå¼€å¯
+// "ForceOff"	- å§‹ç»ˆå…³é—­
 _unit enableGunLights "Auto";
-//ÉèÖÃµ¥¸öµ¥Ôª»òĞ¡¶ÓĞĞÎªÎª°²È«
+// è®¾ç½®å•ä¸ªå•å…ƒæˆ–å°é˜Ÿè¡Œä¸ºä¸ºå®‰å…¨
 unit1 setCombatBehaviour "SAFE";
 group setCombatBehaviour "AWARE";	
-this setCombatBehaviour "Careless";//Âş²»¾­ĞÄ
-//ÉèÖÃµ¥Î»ÎŞÒâÊ¶
+this setCombatBehaviour "Careless"; // æ¼«ä¸ç»å¿ƒ
+// è®¾ç½®å•ä½æ— æ„è¯†
 _unit setUnconscious true;
-//ÃüÁîÒ»¸öÅÚ±ø²¿¶ÓÔÚ¸ø¶¨µÄÎ»ÖÃ(ÎŞÉùµØ)¿ª»ğ¡£µ«Î»ÖÃĞèÒªÔÚ´óÅÚÉä³ÌÄÚ,Èç¹û»ğÅÚÕıÔÚ»»µ¯,ÄÇÃ´¿ª»ğ´ÎÊı½«±»ºöÂÔ
+// å‘½ä»¤ä¸€ä¸ªç‚®å…µéƒ¨é˜Ÿåœ¨ç»™å®šçš„ä½ç½®(æ— å£°åœ°)å¼€ç«ã€‚ä½†ä½ç½®éœ€è¦åœ¨å¤§ç‚®å°„ç¨‹å†…, å¦‚æœç«ç‚®æ­£åœ¨æ¢å¼¹, é‚£ä¹ˆå¼€ç«æ¬¡æ•°å°†è¢«å¿½ç•¥
 Mortar doArtilleryFire [[3000, 120, 0], "8Rnd_82mm_Mo_shells", 3]; 
 
-//Èç¹ûÈËÎï½øÈë¶¯»­ºó×Ô¶¯ÍË³ö£¬¿ÉÒÔÊ¹ÓÃ½ûÓÃAI¶¯»­
+// å¦‚æœäººç‰©è¿›å…¥åŠ¨ç”»åè‡ªåŠ¨é€€å‡ºï¼Œå¯ä»¥ä½¿ç”¨ç¦ç”¨AIåŠ¨ç”»
 soldier1 disableAI "anim";
 
-//ĞèÒª»Ö¸´Ê±Ê¹ÓÃ
+// éœ€è¦æ¢å¤æ—¶ä½¿ç”¨
 soldier1 enableAI "anim";
-//½ûÖ¹AIÒÆ¶¯ºÍ×ªÏò£¬°üÀ¨AI²Ù×İµÄ³µÁ¾
-soldier1 disableAI "Move";//»Ö¸´Í¬enableAI
-//"autocombat" ½ûÖ¹AI·¢ÏÖÍşĞ²ºóÇĞ»»µ½Õ½¶·×´Ì¬£¬¿ÉÒÔÈÃAI¸ü¿ìµ½´ïÄ¿µÄµØ
-//"NVG" 	½ûÖ¹AIÅå´÷Ò¹ÊÓÒÇ
-//"path"	½ûÖ¹AIÒÆ¶¯£¬µ«²»½ûÖ¹Ëû¿´ÏòÄ¿±ê
+// ç¦æ­¢AIç§»åŠ¨å’Œè½¬å‘ï¼ŒåŒ…æ‹¬AIæ“çºµçš„è½¦è¾†
+soldier1 disableAI "Move"; // æ¢å¤åŒenableAI
+// "autocombat" ç¦æ­¢AIå‘ç°å¨èƒååˆ‡æ¢åˆ°æˆ˜æ–—çŠ¶æ€ï¼Œå¯ä»¥è®©AIæ›´å¿«åˆ°è¾¾ç›®çš„åœ°
+// "NVG" 	ç¦æ­¢AIä½©æˆ´å¤œè§†ä»ª
+// "path"	ç¦æ­¢AIç§»åŠ¨ï¼Œä½†ä¸ç¦æ­¢ä»–çœ‹å‘ç›®æ ‡
 
-//Ê¿±øÉ¥Ê§ÒâÊ¶
+// å£«å…µä¸§å¤±æ„è¯†
 _soldier setUnconscious true;
 
-//ÉèÖÃÔÊĞíº¦ÅÂ 0~1Ô½Ğ¡Ê¿±øÔ½²»ÈİÒ×ÌÓÅÜ
+// è®¾ç½®å…è®¸å®³æ€• 0~1è¶Šå°å£«å…µè¶Šä¸å®¹æ˜“é€ƒè·‘
 this allowFleeing 0;
-//ÉèÖÃÕ½¶·Ä£Ê½
+// è®¾ç½®æˆ˜æ–—æ¨¡å¼
 _grp setCombatMode "YELLOW";
-//ÉèÖÃµ¥Î»Õ½¶·Ä£Ê½unit setUnitCombatMode mode;
-//"Blue" ÓÀ²»¿ª»ğ²¢±£³Ö¶ÓĞÎ
-//"Green" Í£»ğ²¢±£³Ö¶ÓĞÎ
-//"White" Í£»ğµ«¿ÉÒÔ×ÔÓÉÑ¡ÔñÄ¿±ê
-//"Yellow" ×ÔÓÉ¿ª»ğ²¢±£³Ö¶ÓĞÎ
-//"Red" ×ÔÓÉ¿ª»ğ£¬×ÔÓÉ½ÓÕ½
+// è®¾ç½®å•ä½æˆ˜æ–—æ¨¡å¼unit setUnitCombatMode mode;
+// "Blue" æ°¸ä¸å¼€ç«å¹¶ä¿æŒé˜Ÿå½¢
+// "Green" åœç«å¹¶ä¿æŒé˜Ÿå½¢
+// "White" åœç«ä½†å¯ä»¥è‡ªç”±é€‰æ‹©ç›®æ ‡
+// "Yellow" è‡ªç”±å¼€ç«å¹¶ä¿æŒé˜Ÿå½¢
+// "Red" è‡ªç”±å¼€ç«ï¼Œè‡ªç”±æ¥æˆ˜
 
-//ÉèÖÃ³µÁ¾³ÉÔ±ºÍÅÚÊÖÊÇ·ñÔÚÕ½¶·×´Ì¬Ê±ÏÂ³µ£¬Èç¹ûÎªture£¬µ¥Î»»áÁ¢¼´ÏÂ³µ
-_veh setUnloadInCombat [true, false]; //setUnloadInCombat [allowCargo, allowTurrets]
-//ÉèÖÃ³µÁ¾ÔÚÂÄ´ø/³µÂÖÊÜËğÊ±ÊÇ·ñÏÂ³µ£¬µ«ÔÚ³µÁ¾ÄçË®¡¢¼´½«±¬Õ¨»òµ¹ÖÃÒ»¶ÎÊ±¼ä£¬ËûÃÇÈÔÈ»»áÀë¿ª
-_vehicle allowCrewInImmobile true; //allowCrewInImmobile [brokenWheels, upsideDown]
+// è®¾ç½®è½¦è¾†æˆå‘˜å’Œç‚®æ‰‹æ˜¯å¦åœ¨æˆ˜æ–—çŠ¶æ€æ—¶ä¸‹è½¦ï¼Œå¦‚æœä¸ºtureï¼Œå•ä½ä¼šç«‹å³ä¸‹è½¦
+_veh setUnloadInCombat [true, false]; // setUnloadInCombat [allowCargo, allowTurrets]
+// è®¾ç½®è½¦è¾†åœ¨å±¥å¸¦/è½¦è½®å—æŸæ—¶æ˜¯å¦ä¸‹è½¦ï¼Œä½†åœ¨è½¦è¾†æººæ°´ã€å³å°†çˆ†ç‚¸æˆ–å€’ç½®ä¸€æ®µæ—¶é—´ï¼Œä»–ä»¬ä»ç„¶ä¼šç¦»å¼€
+_vehicle allowCrewInImmobile true; // allowCrewInImmobile [brokenWheels, upsideDown]
 
-//±£ÁôµÄµ¥Î»
+// ä¿ç•™çš„å•ä½
 bis_endUnits = ([BIS_air, BIS_inf] + units group BIS_officerHeliD + units group BIS_heli2D + BIS_heli2Team + units group BIS_ambHeli1D + units group BIS_ambHeli2D);
-//É¾³ı²»±ØÒªµÄµ¥Î»
+// åˆ é™¤ä¸å¿…è¦çš„å•ä½
 {deleteVehicle _x} forEach ((allUnits + vehicles) - BIS_endUnits);
 
 
-//ºÏÀíÊ¹ÓÃforEach´úÂë¿ÉÒÔËõ¼õ²»±ØÒªµÄÈÎÎñÁ¿£¬ÖğĞĞÖ´ĞĞ´úÂëµÄÏìÓ¦ËÙ¶ÈÊ¼ÖÕ±Èforeach¿ì,µ«±àÒëËÙ¶È¿ÉÄÜ±ÈforeachÂı
+// åˆç†ä½¿ç”¨forEachä»£ç å¯ä»¥ç¼©å‡ä¸å¿…è¦çš„ä»»åŠ¡é‡ï¼Œé€è¡Œæ‰§è¡Œä»£ç çš„å“åº”é€Ÿåº¦å§‹ç»ˆæ¯”foreachå¿«, ä½†ç¼–è¯‘é€Ÿåº¦å¯èƒ½æ¯”foreachæ…¢
 [_unitOne, _unitTwo, _unitThr] orderGetIn true;
-{_x assignAsCargo _veh } forEach units player;
+{_x assignAsCargo _veh} forEach units player;
 
-//É¾³ı¶à¸öĞ¡¶Ó
-{deletevehicle _x} forEach (units group1 + units group2)
-//Í¬Ê±É¾³ı¶à¸öÔØ¾ßºÍÔØ¾ß³ÉÔ±
-{deletevehicleCrew _x;deletevehicle _x} forEach [_veh1 , _veh2 , _veh3];
-//Í¬Ê±ÉúĞ§µ½¶à¸ö²»Í¬Ğ¡¶ÓµÄµ¥Î»»òÕßÍ¬Ò»¸öĞ¡¶ÓµÄÄ³Ğ©µ¥Î»
-{_x allowdammage false; _x setCaptive true;} forEach [leaderplayer,teamplayer1,teamplayer2,staygroup];
+// åˆ é™¤å¤šä¸ªå°é˜Ÿ
+{deletevehicle _x} forEach (units group1 + units group2);
+// åŒæ—¶åˆ é™¤å¤šä¸ªè½½å…·å’Œè½½å…·æˆå‘˜
+{deletevehicleCrew _x;deletevehicle _x} forEach [_veh1, _veh2, _veh3];
+// åŒæ—¶ç”Ÿæ•ˆåˆ°å¤šä¸ªä¸åŒå°é˜Ÿçš„å•ä½æˆ–è€…åŒä¸€ä¸ªå°é˜Ÿçš„æŸäº›å•ä½
+{_x allowdammage false; _x setCaptive true;} forEach [leaderplayer, teamplayer1, teamplayer2, staygroup];
 units player orderGetIn true; 
-//ÉèÖÃÎ»ÖÃ
-_obj SetPos [0,0,0];
-//Òş²ØÎïÌå
+// è®¾ç½®ä½ç½®
+_obj SetPos [0, 0, 0];
+// éšè—ç‰©ä½“
 hideObject _obj; _obj hideObject false;
-//ÆôÓÃ/½ûÓÃÄ£Äâ
+// å¯ç”¨/ç¦ç”¨æ¨¡æ‹Ÿ
 player enableSimulation false;
 
-//¶àÈËÓÎÏ·ÒªÊ¹ÓÃ×¨ÓÃÃüÁîÆôÓÃÄ£Äâ²¢ÏÔÊ¾ÎïÌå£¬
-_obj hideObjectGlobal false ; _obj enableSimulationGlobal true;
-//ÉèÖÃÔØ¾ßÈ¼ÁÏ(0~1)
+// å¤šäººæ¸¸æˆè¦ä½¿ç”¨ä¸“ç”¨å‘½ä»¤å¯ç”¨æ¨¡æ‹Ÿå¹¶æ˜¾ç¤ºç‰©ä½“ï¼Œ
+_obj hideObjectGlobal false; _obj enableSimulationGlobal true;
+// è®¾ç½®è½½å…·ç‡ƒæ–™(0~1)
 _veh setfuel 0.5;
-//´´½¨µØÀ×²¢É±ËÀÍæ¼Ò
-_mines = createMine ["APERSMine", getposATL player, [], 0];
-_mines setdammage 1;
+// åˆ›å»ºåœ°é›·å¹¶æ€æ­»ç©å®¶
+_mine = createMine ["APERSMine", getposASL player, [], 0, "CAN_COLLIDE"]; // è¦è·å–ç²¾ç¡®ä½ç½®ï¼Œè¯·ä½¿ç”¨ASL
+_mine setdammage 1;
 player setdammage 1;
-//´´½¨ÅÚµ¯É±ËÀÍæ¼Ò
-createVehicle ["M_Mo_120mm_AT", position player, [], 0, "NONE"];
+// åˆ›å»ºç‚®å¼¹æ€æ­»ç©å®¶
+createVehicle ["M_Mo_120mm_AT", getPosATL player, [], 0, "CAN_COLLIDE"];
 player setdammage 1;
-//ÎªÖ¸¶¨ÎäÆ÷Éè¶¨ÖØĞÂÌî×°Ê±¼ä£¬½öµ±´ÎÓĞĞ§ ³µÁ¾ setWeaponReloadingTime [ÅÚÊÖ , Ç¹¿ÚÃû³Æ]
-_vehicle setWeaponReloadingTime [gunner , currentMuzzle gunner , 0.5];
+// ä¸ºæŒ‡å®šæ­¦å™¨è®¾å®šé‡æ–°å¡«è£…æ—¶é—´ï¼Œä»…å½“æ¬¡æœ‰æ•ˆ è½¦è¾† setWeaponReloadingTime [ç‚®æ‰‹, æªå£åç§°]
+_vehicle setWeaponReloadingTime [_gunner, currentMuzzle _gunner, 0.5];
 
-//ÒªÊ¼ÖÕµ÷Õû¸ÄÎäÆ÷µÄÖØ×°Ê±¼äÊ±£º
-this addEventHandler  ["Fired" ,{ 
-	_this # 0 setWeaponReloadingTime [gunner (_this # 0), currentMuzzle (gunner (_this # 0)), 1/3] ; 
+// è¦å§‹ç»ˆè°ƒæ•´æ”¹æ­¦å™¨çš„é‡è£…æ—¶é—´æ—¶ï¼š
+this addEventHandler ["Fired", 
+{
+	params ["_vehicle"];
+	_gunner = gunner _vehicle;
+	_vehicle setWeaponReloadingTime [_gunner, currentMuzzle _gunner, 0.25]; 
 }];
 
-//Ìí¼ÓÒ»¸öÊÂ¼ş´¦Àí³ÌĞò£¬ÈÃµ¥Î»·¢ÉäµÄµ¼µ¯Ëø¶¨¹Ì¶¨Ä¿±ê
+// æ·»åŠ ä¸€ä¸ªäº‹ä»¶å¤„ç†ç¨‹åºï¼Œè®©å•ä½å‘å°„çš„å¯¼å¼¹é”å®šå›ºå®šç›®æ ‡
 this addEventHandler ["Fired", {
-	params ["_unit", "_projectile" ];
-	_unit = _this select 0;
-	_projectile = _this select 6;
+	params ["_unit", "", "", "", "", "", "_projectile"];
 	_projectile setMissileTarget _target;
 }];
 
-//ÆÕÍ¨¾¯³µµÆ²»»á·¢³öºì¹âºÍÀ¶¹â£¬µ«Èç¹ûÄúÏëÊ¹ÓÃËüÃÇµÄ»°¡£Èç¹ûÄúÏ£ÍûµÆ´ÓÒ»¿ªÊ¼¾ÍÁÁ£¬Ö»Ğè½«Æä·ÅÈë init ×Ö¶Î¼´¿É¡£
-this animate ["BeaconsStart", 1]; //¶ÔÓÚ¾¯²ìÔ½Ò°
-this animateSource ["lights_em_hide",1];//¶ÔÓÚ¾¯²ìºÍ¾È»¤³µ
-//´ò¿ªÔ½Ò°³µºÍ»õ³µµÄ¾¯±¨Æ÷
-[this,"CustomSoundController1",1,0.2] remoteExec ["BIS_fnc_setCustomSoundController"];
-//¹Ø±Õ¾¯±¨Æ÷
-[this,"CustomSoundController1",0,0.4] remoteExec ["BIS_fnc_setCustomSoundController"];
+// æ™®é€šè­¦è½¦ç¯ä¸ä¼šå‘å‡ºçº¢å…‰å’Œè“å…‰ï¼Œä½†å¦‚æœæ‚¨æƒ³ä½¿ç”¨å®ƒä»¬çš„è¯ã€‚å¦‚æœæ‚¨å¸Œæœ›ç¯ä»ä¸€å¼€å§‹å°±äº®ï¼Œåªéœ€å°†å…¶æ”¾å…¥ init å­—æ®µå³å¯ã€‚
+this animate ["BeaconsStart", 1]; // å¯¹äºè­¦å¯Ÿè¶Šé‡
+this animateSource ["lights_em_hide", 1]; // å¯¹äºè­¦å¯Ÿå’Œæ•‘æŠ¤è½¦
+// æ‰“å¼€è¶Šé‡è½¦å’Œè´§è½¦çš„è­¦æŠ¥å™¨
+[this, "CustomSoundController1", 1, 0.2] remoteExec ["BIS_fnc_setCustomSoundController"];
+// å…³é—­è­¦æŠ¥å™¨
+[this, "CustomSoundController1", 0, 0.4] remoteExec ["BIS_fnc_setCustomSoundController"];
 
-//Ç¿ÆÈµç´ÅÅÚÎäÆ÷¿ª»ğ,²»ÊÊÓÃÓÚÍæ¼ÒÔÚÅÚÊÖÎ»ÖÃ
-vehicle player fireAtTarget [vehicle player ,"cannon_railgun_fake"]
+// å¼ºè¿«ç”µç£ç‚®æ­¦å™¨å¼€ç«, ä¸é€‚ç”¨äºç©å®¶åœ¨ç‚®æ‰‹ä½ç½®
+vehicle player fireAtTarget [vehicle player, "cannon_railgun_fake"]
 gunner _veh fire "cannon_railgun_fake";
-gunner _veh forceWeaponFire ["cannon_railgun_fake","ai"];
+gunner _veh forceWeaponFire ["cannon_railgun_fake", "ai"];
 
-//ÉèÖÃ±ÚÂ¯µÄ×´Ì¬ true±íÊ¾ÈÃÆäÈ¼ÉÕ
+// è®¾ç½®å£ç‚‰çš„çŠ¶æ€ trueè¡¨ç¤ºè®©å…¶ç‡ƒçƒ§
 _object inflame true;
 
-//ÏŞÖÆ³µÁ¾ËÙ¶È
-this limitSPeed 60; //60km/h
-this limitSpeed -1; //Ğ¡ÓÚÁãµÄÈÎºÎÊı×ÖÓÃÓÚ½â³ıÏŞËÙ
+// é™åˆ¶è½¦è¾†é€Ÿåº¦
+this limitSPeed 60; // 60km/h
+this limitSpeed -1; // å°äºé›¶çš„ä»»ä½•æ•°å­—ç”¨äºè§£é™¤é™é€Ÿ
 
-//ÏŞÖÆÍæ¼Ò³µÁ¾¶ÈËÙ¶È ´ËÃüÁîÊ¹ÓÃ PID ¿ØÖÆÆ÷¸²¸Ç³µÁ¾µÄÍÆÁ¦/ÖÆ¶¯ÊäÈëÀ´ÊµÏÖµÄ
-this setCruiseControl [50, false]; //³µÁ¾ÓÀÔ¶²»»á³¬¹ı50Km/h
-//ÏŞÖÆ·ÉĞĞÆ÷¸ß¶È object flyInHeight [¸ß¶È, Ç¿ÖÆ];Ä¬ÈÏ²»Ç¿ÖÆ£¬¼´[100,false]
-this flyInHeight 80; //·ÉĞĞÆ÷°´ÕÕ80¸ß¶È·ÉĞĞ
-this flyInHeight [60, true]; //Ç¿ÖÆ·ÉĞĞÆ÷ÔÚ60¸ß¶È·ÉĞĞ
+// é™åˆ¶ç©å®¶è½¦è¾†åº¦é€Ÿåº¦ æ­¤å‘½ä»¤ä½¿ç”¨ PID æ§åˆ¶å™¨è¦†ç›–è½¦è¾†çš„æ¨åŠ›/åˆ¶åŠ¨è¾“å…¥æ¥å®ç°çš„
+this setCruiseControl [50, false]; // è½¦è¾†æ°¸è¿œä¸ä¼šè¶…è¿‡50Km/h
+// é™åˆ¶é£è¡Œå™¨é«˜åº¦ object flyInHeight [é«˜åº¦, å¼ºåˆ¶];é»˜è®¤ä¸å¼ºåˆ¶ï¼Œå³[100, false]
+this flyInHeight 80; // é£è¡Œå™¨æŒ‰ç…§80é«˜åº¦é£è¡Œ
+this flyInHeight [60, true]; // å¼ºåˆ¶é£è¡Œå™¨åœ¨60é«˜åº¦é£è¡Œ
 
-/*==============================Êı¾İ============================*/
-//¸´ÖÆ×Ö·û´®µ½¼ôÇĞ°å
-copyToClipboard "ÄãºÃ£¡";
-//Èç¹ûĞèÒªÌØÊâ×Ö·û£¬ÀıÈçÖĞÎÄµÄ¸´ÖÆ£¬ÇëÊ¹ÓÃ£º
+// è¿”å›ç»„é•¿æ­£åœ¨é€‰æ‹©çš„ä¸‹å±
+groupSelectedUnits player;
+
+// -- è¿”å›å¯¹è±¡LODçš„å‘½åå±æ€§
+_object namedProperties ["Memory"]
+// -- è¿”å›å¯¹è±¡æŒ‡å®šLODçš„é¡¶ç‚¹åç§°(selectnames)å…è®¸æŒ‰ç…§
+_obeject selectionNames "Memory";
+get3DENSelected "Object"# 0 selectionNames "Memory"
+// åˆ›å»ºå…‰æº
+_pos = BIS_boxType modelToWorld (BIS_boxtype selectionPosition ["Light_1_pos", "Memory"]);
+// ç«ç‚®æ­¦å™¨æªå£ä½ç½®
+"usti hlavne"
+// å°†object1é™„åŠ åˆ°object2ï¼Œä¿æŒå…¶ç›¸å¯¹ä½ç½®å’Œæ–¹å‘
+[_object1, _object2] call BIS_fnc_attachToRelative;
+
+// è®¾ç½®ç‰©ä½“æ–¹å‘æœä¸‹ï¼Œä¾‹å¦‚å¯¼å¼¹å‚ç›´è½åœ°
+_missile = createVehicle ["Rocket_04_AP_F", player modelToWorld [0, 50, 100]];
+_missile setVectorDirAndUp [[0, 0, -1], [0, 1, 0]];
+// æ–¹å‘åå‘
+_missile = createVehicle ["M_NLAW_AT_F", player modelToWorld [0, 10, 20]];
+_missile setVectorDirAndUp [[0, 0, -1], [0, 1, 0]];
+/*==============================æ•°æ®============================*/
+// å¤åˆ¶å­—ç¬¦ä¸²åˆ°å‰ªåˆ‡æ¿
+copyToClipboard "ä½ å¥½ï¼";
+// å¦‚æœéœ€è¦ç‰¹æ®Šå­—ç¬¦ï¼Œä¾‹å¦‚ä¸­æ–‡çš„å¤åˆ¶ï¼Œè¯·ä½¿ç”¨ï¼š
 forceUnicode 1;
 copyToClipboard str _data;
-/*============================¼ì²â============================*/
-//·µ»Øµ¥Î»µ±Ç°Ê¹ÓÃµÄÇ¹¿Ú;
-currentMuzzle _unit;//"Missile_AGM_02_Plane_CAS_01_F"¿Õ¶ÔµØµ¼µ¯
+/*============================æ£€æµ‹============================*/
+// è¿”å›å•ä½å½“å‰ä½¿ç”¨çš„æªå£;
+currentMuzzle _unit; // "Missile_AGM_02_Plane_CAS_01_F"ç©ºå¯¹åœ°å¯¼å¼¹
 
-//´´½¨Ò»¸ö¼¤¹â°Ğ£¬²¢ÔÚÖ¸¶¨Ê±¼äÄÚÌáÊ¾
-_laser = "LaserTargetW" createVehicle (getPosATL BIS_target);  //westbase LaserTargetW
-_laser attachTo [BIS_Target, [0, 0, 1]]; //½«¼¤¹â°Ğ¸½¼ÓÔÚÄ¿±êÉÏ
+// è¿”å›å•ä½ç‚®å¡”æ–¹å‘
+_array = vehicle player weaponDirection currentWeapon (vehicle player);
+_dir_degrees = (_array select 0) atan2 (_array select 1);
+_dir_degrees;
+
+// åˆ›å»ºä¸€ä¸ªæ¿€å…‰é¶ï¼Œå¹¶åœ¨æŒ‡å®šæ—¶é—´å†…æç¤º
+_laser = "LaserTargetW" createVehicle (getPosATL BIS_target); // westbase LaserTargetW
+_laser attachTo [BIS_Target, [0, 0, 1]]; // å°†æ¿€å…‰é¶é™„åŠ åœ¨ç›®æ ‡ä¸Š
 west reportRemoteTarget [_laser, 3600];
-//¹â±êÄ¿±ê ·µ»ØÍæ¼Ò×¼ĞÄÎ»ÖÃµÄÄ¿±ê
+// å…‰æ ‡ç›®æ ‡ è¿”å›ç©å®¶å‡†å¿ƒä½ç½®çš„ç›®æ ‡
 cursorTarget;
-//·µ»Ø¶ÔÏóÏà¶ÔÓÚµØĞÎµÄÎ»ÖÃ
+// è¿”å›å¯¹è±¡ç›¸å¯¹äºåœ°å½¢çš„ä½ç½®
 getPosATL _obj; getPos _obj;
-//·µ»ØÒÔ¶ÔÏóÎªÖĞĞÄµÄº£Æ½Ãæ¸ß¶È
+// è¿”å›ä»¥å¯¹è±¡ä¸ºä¸­å¿ƒçš„æµ·å¹³é¢é«˜åº¦
 getPosWorld _obj; getPosALS _obj;
-//ÉèÖÃ¶ÔÏó¸ß¶È
-[this , 10 ] call BIS_fnc_setHeight;
-//»ñÈ¡µ¥Î»ÀàĞÍ 
+// è®¾ç½®å¯¹è±¡é«˜åº¦
+[this, 10] call BIS_fnc_setHeight;
+// è·å–å•ä½ç±»å‹ 
 _type = typeOf player; // "B_Story_Protagonist_F";
-//´ÓÊı×éÖĞËæ»úÑ¡Ôñ
-selectrandom [1, 2, 3, 4];//½á¹û¿ÉÒÔÊÇÆäÖĞÈÎºÎÒ»¸ö
-//Éú³ÉËæ»úÊı random Êı×Ö¡£
-random 3; //¸ù¾İËæ»ú·Ö²¼Éú³É 0 < x < 3µÄÊı×Ö
-//Í¨¹ıÈ«¾Ö±äÁ¿ÓÀ¾ÃĞÔ±£´æÍæ¼Ò×°±¸µ½±¾µØ
-//»ñÈ¡Íæ¼Ò×°±¸
+// ä»æ•°ç»„ä¸­éšæœºé€‰æ‹©
+selectrandom [1, 2, 3, 4]; // ç»“æœå¯ä»¥æ˜¯å…¶ä¸­ä»»ä½•ä¸€ä¸ª
+// ç”Ÿæˆéšæœºæ•° random æ•°å­—ã€‚
+random 3; // æ ¹æ®éšæœºåˆ†å¸ƒç”Ÿæˆ 0 < x < 3çš„æ•°å­—
+// é€šè¿‡å…¨å±€å˜é‡æ°¸ä¹…æ€§ä¿å­˜ç©å®¶è£…å¤‡åˆ°æœ¬åœ°
+// è·å–ç©å®¶è£…å¤‡
 private _varsToSave = getUnitLoadout player; 
-//½«Íæ¼Ò×°±¸±£´æÖÁÃûÎª"testsave_1"µÄ±¾µØ±äÁ¿ÄÚ
-profileNamespace setVariable ["testsave_1",_varsToSave];
-//Ç¿ÖÆ±£´æ
+// å°†ç©å®¶è£…å¤‡ä¿å­˜è‡³åä¸º"testsave_1"çš„æœ¬åœ°å˜é‡å†…
+profileNamespace setVariable ["testsave_1", _varsToSave];
+// å¼ºåˆ¶ä¿å­˜
 saveProfileNamespace;
 
-//ÔÙ´Î¶ÁÈ¡
+// å†æ¬¡è¯»å–
 BIS_playerInventory = profileNamespace getVariable "testsave_1";
-//¼ÓÔØÍæ¼Ò×°±¸
+// åŠ è½½ç©å®¶è£…å¤‡
 player setUnitLoadout BIS_playerInventory;
-//Çå¿Õ±£´æµÄ±¾µØ±äÁ¿
-profileNamespace setVariable ["testsave_1",nil];
+// æ¸…ç©ºä¿å­˜çš„æœ¬åœ°å˜é‡
+profileNamespace setVariable ["testsave_1", nil];
 
-//¼ì²éÍæ¼ÒÊÇ·ñĞ¯´øÎäÆ÷
-primaryWeapon player ==  "";
-secondaryWeapon player ==  "";
-//¼ì²éÍæ¼ÒÊÇ·ñĞ¯´øÊÖÇ¹
+// æ£€æŸ¥ç©å®¶æ˜¯å¦æºå¸¦æ­¦å™¨
+primaryWeapon player == "";
+secondaryWeapon player == "";
+// æ£€æŸ¥ç©å®¶æ˜¯å¦æºå¸¦æ‰‹æª
 handgunWeapon player == "";
-//·µ»Øµ¥Î»Ö÷ÎäÆ÷
+// è¿”å›å•ä½ä¸»æ­¦å™¨
 primaryWeapon player;
-//·µ»ØÎäÆ÷¼æÈİµÄµ¯Ò©
-compatibleMagazines  ["arifle_Katiba_GL_F", "this"]; //compatibleMagazines [ÎäÆ÷£¬Ç¹¿Ú]
+// è¿”å›æ­¦å™¨å…¼å®¹çš„å¼¹è¯
+compatibleMagazines ["arifle_Katiba_GL_F", "this"]; // compatibleMagazines [æ­¦å™¨ï¼Œæªå£]
 
-//¼ì²éµ¥Î»Ö÷ÎäÆ÷¼ÓÔØµÄµ¯Ò©
+// æ£€æŸ¥å•ä½ä¸»æ­¦å™¨åŠ è½½çš„å¼¹è¯
 primaryWeaponMagazine _units;
-//»ñÈ¡µ¥Î»ÕıÔÚ¼àÊÓµÄÄ¿±ê
+// è·å–å•ä½æ­£åœ¨ç›‘è§†çš„ç›®æ ‡
 getAttackTarget _unit;
-//ĞèÒª´¥·¢Æ÷Ìõ¼şºÍ×´Ì¬¶¼Íê³ÉÊ±²Å´¥·¢
-_var && this;//&&Á½¸öÌõ¼ş¶¼ÎªÕæÊ±·µ»ØÎªtrue
+// éœ€è¦è§¦å‘å™¨æ¡ä»¶å’ŒçŠ¶æ€éƒ½å®Œæˆæ—¶æ‰è§¦å‘
+_var && this; // &&ä¸¤ä¸ªæ¡ä»¶éƒ½ä¸ºçœŸæ—¶è¿”å›ä¸ºtrue
 
-(alive player) || this;//||Á½¸öÌõ¼şÖ®Ò»ÎªÕæÊ±·µ»ØÎªtrue
+(alive player) || this; // ||ä¸¤ä¸ªæ¡ä»¶ä¹‹ä¸€ä¸ºçœŸæ—¶è¿”å›ä¸ºtrue
 
-//Í¬Ê±¶¨Òå¶à¸öÌõ¼ş¶¼ÎªÕæÊ±·µ»Øtrue
+// åŒæ—¶å®šä¹‰å¤šä¸ªæ¡ä»¶éƒ½ä¸ºçœŸæ—¶è¿”å›true
 (((!alive soldier1) && (!alive soldier2)) && ((!alive soldier3) && (!alive soldier4)))
-//¸ü¼òµ¥µÄ·½Ê½
+// æ›´ç®€å•çš„æ–¹å¼
 (alive soldier1) && (soldier1 in BIS_car) && (triggerActivated _tri) && (!alive soldier4) && (!alive soldier5)
-//¼ì²âÍæ¼ÒÓëµØÍ¼±ê¼ÇµÄ¾àÀë
+// æ£€æµ‹ç©å®¶ä¸åœ°å›¾æ ‡è®°çš„è·ç¦»
 (player distance markerpos "marker_0") <= 15;
 
-//¼ì²é´¥·¢Æ÷ÊÇ·ñ¼¤»î£¬ÈôÒÑ¼¤»î½«·µ»Øtrue
+// æ£€æŸ¥è§¦å‘å™¨æ˜¯å¦æ¿€æ´»ï¼Œè‹¥å·²æ¿€æ´»å°†è¿”å›true
 triggerActivated _trg;
 
-//ÒÔÃëÎªµ¥Î»ÔİÍ£¸ø¶¨Ê±¼äµÄ´úÂëÖ´ĞĞ¡£Ë¯Ãß¾«¶ÈÓÉÖ¡ÂÊ¸ø³ö£¬¸ø³öµÄÑÓ³ÙÊÇÔ¤ÆÚµÄ×îĞ¡ÑÓ³Ù¡£±ØĞëÔÚ¼Æ»®»·¾³µ÷ÓÃ£¬¼´ÓÉexecVM»òspawnÖ´ĞĞµÄ½Å±¾µÈ¡£
-sleep 1; //ÔİÍ£Ò»Ãë
+// ä»¥ç§’ä¸ºå•ä½æš‚åœç»™å®šæ—¶é—´çš„ä»£ç æ‰§è¡Œã€‚ç¡çœ ç²¾åº¦ç”±å¸§ç‡ç»™å‡ºï¼Œç»™å‡ºçš„å»¶è¿Ÿæ˜¯é¢„æœŸçš„æœ€å°å»¶è¿Ÿã€‚å¿…é¡»åœ¨è®¡åˆ’ç¯å¢ƒè°ƒç”¨ï¼Œå³ç”±execVMæˆ–spawnæ‰§è¡Œçš„è„šæœ¬ç­‰ã€‚
+sleep 1; // æš‚åœä¸€ç§’
 
-//µØÕğ£¬µÈ¼¶Îª1~4
+// åœ°éœ‡ï¼Œç­‰çº§ä¸º1~4
 [4] spawn BIS_fnc_earthquake;
-//(¼ì²âÄ¿±êÊÇ·ñ½Ó´¥µØÃæ)
+// (æ£€æµ‹ç›®æ ‡æ˜¯å¦æ¥è§¦åœ°é¢)
 isTouchingGround player;
-//Èç¹û¼ì²éÔÚ³µÁ¾ÖĞµÄµ¥Î»£¬Ó¦¸ÃÊ¹ÓÃ
+// å¦‚æœæ£€æŸ¥åœ¨è½¦è¾†ä¸­çš„å•ä½ï¼Œåº”è¯¥ä½¿ç”¨
 isTouchingGround (vehicle player); // anytime is true
 
-isTouchingGround vehicle; //True when on the ground
-itemsWithMagazines player  || (items player + assignedItems player);
-//¼ì²éµ¥Î»¿â´æ.Òª×¢ÒâµÄÊÇ£¬¿â´æÎïÆ·´úÂëºÍ×ÊÔ´¹ÜÀíÆ÷µÄÃû³ÆÎ´±ØÏàÍ¬£¬Òª»ñÈ¡ÆäÏîÄ¿Ãû³Æ£¬ĞèÒªÊ¹ÓÃ¼ì²é¿â´æÀ´»ñÈ¡¡£
-//Èç¹ûµ¥Î»ÓµÓĞGPS£¬Ôò·µ»Øtrue
+isTouchingGround vehicle; // True when on the ground
+itemsWithMagazines player || (items player + assignedItems player);
+// æ£€æŸ¥å•ä½åº“å­˜.è¦æ³¨æ„çš„æ˜¯ï¼Œåº“å­˜ç‰©å“ä»£ç å’Œèµ„æºç®¡ç†å™¨çš„åç§°æœªå¿…ç›¸åŒï¼Œè¦è·å–å…¶é¡¹ç›®åç§°ï¼Œéœ€è¦ä½¿ç”¨æ£€æŸ¥åº“å­˜æ¥è·å–ã€‚
+// å¦‚æœå•ä½æ‹¥æœ‰GPSï¼Œåˆ™è¿”å›true
 "ToolKit" in (items player + assignedItems player)
-//¹¤¾ßÏä ´úÂë ToolKit
+// å·¥å…·ç®± ä»£ç  ToolKit
  
 ("ToolKit" in (items player + assignedItems player)) 
 
 
-//¼ì²âµØÀ×ÊÇ·ñ´¦ÓÚ»î¶¯×´Ì¬
+// æ£€æµ‹åœ°é›·æ˜¯å¦å¤„äºæ´»åŠ¨çŠ¶æ€
 mineActive _mine;
-if (mineActive _mine) then { } else  {  hint "ÕâÊÇ¼ÙµÄ"  } ;
-//·µ»Øµ¥Î»µÄĞ¡¶Ó³¤
+if (mineActive _mine) then {} else {hint "è¿™æ˜¯å‡çš„"};
+// è¿”å›å•ä½çš„å°é˜Ÿé•¿
 leader player;
 
-//È¡Ö¸¶¨ÎïÌåºó´¥·¢ _itemºóÃæÎªÎïÌå´úÂë
-player addEventHandler ["Take", {
-	params [ "_unit", "", "_item"];
-	if (_item == "B_AssaultPack_rgr") then {
+// å–æŒ‡å®šç‰©ä½“åè§¦å‘ _itemåé¢ä¸ºç‰©ä½“ä»£ç 
+player addEventHandler ["Take", 
+{
+	params ["_unit", "", "_item"];
+	if (_item == "B_AssaultPack_rgr") then 
+	{
 		_code;
 	};
 }];
-//¼ì²â¶à¸öÄ¿±êµÄ×´Ì¬
-{alive _x} count [ BIS_AA1, BIS_AA2] == 0;
-//¼ì²éĞ¡¶ÓÈËÊı×´Ì¬
+// æ£€æµ‹å¤šä¸ªç›®æ ‡çš„çŠ¶æ€
+{alive _x} count [BIS_AA1, BIS_AA2] == 0;
+// æ£€æŸ¥å°é˜Ÿäººæ•°çŠ¶æ€
 {alive _x} count units _group == count units _group;
 
-//¼ì²é³µÁ¾È¼ÁÏ
-if (fuel vehicle player == 0) then {hint "ÄúµÄÔØ¾ßÃ»ÓĞÈ¼ÁÏÁË£¡"};
+// æ£€æŸ¥è½¦è¾†ç‡ƒæ–™
+if (fuel vehicle player == 0) then {hint "æ‚¨çš„è½½å…·æ²¡æœ‰ç‡ƒæ–™äº†ï¼"};
 
-openMap [true,false]; //Õı³£´ò¿ªµØÍ¼
-openMap [false,false]; // Õı³£¹Ø±Õ´ò¿ªµÄµØÍ¼
-openMap [true,true]; //Ç¿ÖÆ´ò¿ªµØÍ¼²¢±£³Ö´ò¿ª×´Ì¬(ÓÃ»§ÎŞ·¨×ÔĞĞ¹Ø±Õ)
+openMap [true, false]; // æ­£å¸¸æ‰“å¼€åœ°å›¾
+openMap [false, false]; // æ­£å¸¸å…³é—­æ‰“å¼€çš„åœ°å›¾
+openMap [true, true]; // å¼ºåˆ¶æ‰“å¼€åœ°å›¾å¹¶ä¿æŒæ‰“å¼€çŠ¶æ€(ç”¨æˆ·æ— æ³•è‡ªè¡Œå…³é—­)
 
-//¼ì²é¶ÔÏóÊÇ·ñÊôÓÚÄ³¸öÀàĞÍ
-_obj isKindOf "MRAP_02_base_F"; //CSATÔËÊäÔØ¾ßMRAP
-_obj isKindOf "MRAP_01_base_F"; //NATOµÄMRAP£¬ÆäÖĞ01Îª±±Ô¼Ê¹ÓÃ 02ÎªCSATÊ¹ÓÃ 03ÔòÊÇAAF
-"LSV_02_base_F" //CSATÇáĞÍÍ»»÷³µ
-"Tank" //È«²¿Ì¹¿ËµÄÀàĞÍ£¬ÒÔ¼°·À¿ÕÔØ¾ßÀàĞÍ
-"Wheeled_APC_F" //ÂÖÊ½×°¼×³µ
+// æ£€æŸ¥å¯¹è±¡æ˜¯å¦å±äºæŸä¸ªç±»å‹
+_obj isKindOf "MRAP_02_base_F"; // CSATè¿è¾“è½½å…·MRAP
+_obj isKindOf "MRAP_01_base_F"; // NATOçš„MRAPï¼Œå…¶ä¸­01ä¸ºåŒ—çº¦ä½¿ç”¨ 02ä¸ºCSATä½¿ç”¨ 03åˆ™æ˜¯AAF
+"LSV_02_base_F" // CSATè½»å‹çªå‡»è½¦
+"Tank" // å…¨éƒ¨å¦å…‹çš„ç±»å‹ï¼Œä»¥åŠé˜²ç©ºè½½å…·ç±»å‹
+"Wheeled_APC_F" // è½®å¼è£…ç”²è½¦
 
-//¼ì²é¶ÔÏóÀàĞÍ
+// æ£€æŸ¥å¯¹è±¡ç±»å‹
 _type = typeof _object; 
 
-//¼ì²éÍæ¼Ò³µÁ¾ÊÇ·ñÊôÓÚ¸ø¶¨ÀàĞÍ
+// æ£€æŸ¥ç©å®¶è½¦è¾†æ˜¯å¦å±äºç»™å®šç±»å‹
 vheicle player iskindof "Truck_02_base_F";
 
-//·µ»Øµ¥Î»»ò³µÁ¾µÄ¸ø¶¨»òµ±Ç°Ñ¡ÔñµÄÎäÆ÷×´Ì¬
+// è¿”å›å•ä½æˆ–è½¦è¾†çš„ç»™å®šæˆ–å½“å‰é€‰æ‹©çš„æ­¦å™¨çŠ¶æ€
 _wsPlayer = weaponState player;
-//["arifle_MXC_ACO_F","arifle_MXC_ACO_F","Single","30Rnd_65x39_caseless_mag",30,0,0]
-//µ¥Î»µ±Ç°ÎäÆ÷Ä£Ê½
-_muzzle = weaponState player select 2;//Ç¹¿Ú
-_weaponMode = currentWeaponMode player;//Ä£Ê½
+// ["arifle_MXC_ACO_F", "arifle_MXC_ACO_F", "Single", "30Rnd_65x39_caseless_mag", 30, 0, 0]
+// å•ä½å½“å‰æ­¦å™¨æ¨¡å¼
+_muzzle = weaponState player select 2; // æªå£
+_weaponMode = currentWeaponMode player; // æ¨¡å¼
 
-//Ëæ»úÑ¡Ôñ
+// éšæœºé€‰æ‹©
 _projectiles = [1, 2, 3, 4];
-selectRandom _projectiles;//½«Ëæ»ú·µ»Ø1~4µÄÈÎÒâÒ»¸ö
+selectRandom _projectiles; // å°†éšæœºè¿”å›1~4çš„ä»»æ„ä¸€ä¸ª
 
-//½«»á´ÓËÄ¸öÀàĞÍµÄÔØ¾ßÖĞËæ»ú´´½¨Ò»¸ö
-_projectiles = ["C_Truck_02_box_F" , "C_Truck_02_transport_F" , "C_Truck_02_fuel_F" , "C_Truck_02_covered_F"];  
-_class = if (typeName _projectiles != "ARRAY") then {
-		_projectiles;
-	} else {
-		selectRandom _projectiles;
-	};
+// å°†ä¼šä»å››ä¸ªç±»å‹çš„è½½å…·ä¸­éšæœºåˆ›å»ºä¸€ä¸ª
+_projectiles = ["C_Truck_02_box_F", "C_Truck_02_transport_F", "C_Truck_02_fuel_F", "C_Truck_02_covered_F"]; 
+_class = 
+if (typeName _projectiles != "ARRAY") then {_projectiles;} else {selectRandom _projectiles;};
 _projectile = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
 
-//¹Û²ìÔ±Îª¾Ñ»÷ÊÖ±¨¸æÄ¿±ê[¾Ñ»÷ÊÖ,¹Û²ìÔ±]
+// è§‚å¯Ÿå‘˜ä¸ºç‹™å‡»æ‰‹æŠ¥å‘Šç›®æ ‡[ç‹™å‡»æ‰‹, è§‚å¯Ÿå‘˜]
 [player, unitSpotter] call BIS_fnc_spotter;
 
-//ÔÚÍæ¼ÒÇ°·½´´½¨Ïà»ú²¢¶Ô×¼Íæ¼Ò 
-bis_camera = "camera" camCreate (player modelToWorld [0,5,1]);//ÀàĞÍ camCreate Î»ÖÃ
-bis_camera cameraEffect ["internal", "back"]; //½øÈëÏà»úÊÓÍ¼
-bis_camera camPrepareTarget player; //ÉèÖÃÏà»úÄ¿±ê
-BIS_camear camCommitPrepared 0; //Ïà»ú¶¨Î»Ä¿±êºÍÎ»ÖÃĞèÒª»¨·Ñ¶à¾Ã:0Ãë
+// åœ¨ç©å®¶å‰æ–¹åˆ›å»ºç›¸æœºå¹¶å¯¹å‡†ç©å®¶ 
+bis_camera = "camera" camCreate (player modelToWorld [0, 5, 1]); // ç±»å‹ camCreate ä½ç½®
+bis_camera cameraEffect ["internal", "back"]; // è¿›å…¥ç›¸æœºè§†å›¾
+bis_camera camPrepareTarget player; // è®¾ç½®ç›¸æœºç›®æ ‡
+BIS_camear camCommitPrepared 0; // ç›¸æœºå®šä½ç›®æ ‡å’Œä½ç½®éœ€è¦èŠ±è´¹å¤šä¹…:0ç§’
 
-bis_camera cameraEffect ["terminate", "back"];//Àî¿ªÏä»úÊÓÍ¼
-camDestroy bis_camera;//É¾³ıÏà»ú
-//¶¨ÒåÈÎÎñÏÔÊ¾ÄÄĞ©HUDÍ¼±ê
+bis_camera cameraEffect ["terminate", "back"]; // æå¼€ç®±æœºè§†å›¾
+camDestroy bis_camera; // åˆ é™¤ç›¸æœº
+// å®šä¹‰ä»»åŠ¡æ˜¾ç¤ºå“ªäº›HUDå›¾æ ‡
 showHUD [
-	true, // scriptedHUD °üÀ¨×¼ĞÇ¡¢¹öÂÖ²Ëµ¥
-	false, // ÏÔÊ¾³µÁ¾¡¢Ê¿±øºÍÎäÆ÷ĞÅÏ¢
-	true, // ³µÁ¾À×´ï
-	true, // ³µÁ¾ÂŞÅÌ
-	true, // ÓÍÏäÖ¸Ê¾
-	true, // HCÏà¹ØÃüÁî²Ëµ¥
+	true, // scriptedHUD åŒ…æ‹¬å‡†æ˜Ÿã€æ»šè½®èœå•
+	false, // æ˜¾ç¤ºè½¦è¾†ã€å£«å…µå’Œæ­¦å™¨ä¿¡æ¯
+	true, // è½¦è¾†é›·è¾¾
+	true, // è½¦è¾†ç½—ç›˜
+	true, // æ²¹ç®±æŒ‡ç¤º
+	true, // HCç›¸å…³å‘½ä»¤èœå•
 	true, // group
-	true, // ÎäÆ÷HUD¹â±ê
-	true, // ×Ô¶¨ÒåĞÅÏ¢
+	true, // æ­¦å™¨HUDå…‰æ ‡
+	true, // è‡ªå®šä¹‰ä¿¡æ¯
 	true, // kills
-	true  // showIcon3D
+	true // showIcon3D
 ];
 showHUD [true, false, true, true, true, true, false, true, false, false, true];
-
-//½¨Á¢ÈÎÎñ¿ªÍ·ĞéÄâÎŞÈË»úĞ§¹û
+showHUD [false, false, false, false, false, false, false, false, false, false, false];
+// å»ºç«‹ä»»åŠ¡å¼€å¤´è™šæ‹Ÿæ— äººæœºæ•ˆæœ
 [player, "Sytar", 300, 250, 75, 1, [], 0, true] spawn BIS_fnc_establishingShot;
 
 [player, "Sytar", 0, 0, 0, 0, [], 0, true] spawn BIS_fnc_establishingShot;
-//ÔÚ¼ò±¨ÖĞÌí¼Ó¿ÉÖ¸ÏòµØÍ¼µÄÁ´½Ó
-<marker name='marker_0'>ÎÄ×Ö</marker>
-//Ïñ¶ÔÏóÌí¼Ó½»»¥¶¯×÷,²¢ÇÒ¶ÔºóĞø¼ÓÓÎÏ·µÄÍæ¼ÒÉúĞ§
+// åœ¨ç®€æŠ¥ä¸­æ·»åŠ å¯æŒ‡å‘åœ°å›¾çš„é“¾æ¥
+<marker name='marker_0'>æ–‡å­—</marker>
+// åƒå¯¹è±¡æ·»åŠ äº¤äº’åŠ¨ä½œ, å¹¶ä¸”å¯¹åç»­åŠ æ¸¸æˆçš„ç©å®¶ç”Ÿæ•ˆ
 [
-	player, // Ä¿±ê¶ÔÏó
-	"Hack Laptop", // ¶¯×÷±êÌâ
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",	// ¿ªÊ¼¶¯×÷Ê±Ê¹ÓÃµÄÍ¼±ê
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",	// ¹ı³ÌÖĞÊ¹ÓÃµÄÍ¼±ê
-	"_this distance _target < 3",	// ´¥·¢¶¯×÷µÄÌõ¼ş
-	"_caller distance _target < 3",	 // Íê³É¶¯×÷Ê±µÄ¾àÀë
-	{}, // ¶¯×÷¿ªÊ¼Ê±Ö´ĞĞµÄ´úÂë
-	{}, // Ö´ĞĞ¶¯×÷µÄÃ¿¸ö¼ä¸ôÊ±Ö´ĞĞµÄ´úÂë
-	{}, //¶¯×÷Íê³ÉÊ±Ö´ĞĞµÄ´úÂë
-	{},  // ¶¯×÷ÖĞ¶ÏÊ±Ö´ĞĞµÄ´úÂë
+	player, // ç›®æ ‡å¯¹è±¡
+	"Hack Laptop", // åŠ¨ä½œæ ‡é¢˜
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 	// å¼€å§‹åŠ¨ä½œæ—¶ä½¿ç”¨çš„å›¾æ ‡
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 	// è¿‡ç¨‹ä¸­ä½¿ç”¨çš„å›¾æ ‡
+	"_this distance _target < 3", 	// è§¦å‘åŠ¨ä½œçš„æ¡ä»¶
+	"_caller distance _target < 3", 	 // å®ŒæˆåŠ¨ä½œæ—¶çš„è·ç¦»
+	{}, // åŠ¨ä½œå¼€å§‹æ—¶æ‰§è¡Œçš„ä»£ç 
+	{}, // æ‰§è¡ŒåŠ¨ä½œçš„æ¯ä¸ªé—´éš”æ—¶æ‰§è¡Œçš„ä»£ç 
+	{}, // åŠ¨ä½œå®Œæˆæ—¶æ‰§è¡Œçš„ä»£ç 
+	{}, // åŠ¨ä½œä¸­æ–­æ—¶æ‰§è¡Œçš„ä»£ç 
 	[], // Arguments passed to the scripts as _this select 3
-	12, // Íê³É¶¯×÷ËùĞèÊ±¼ä
-	0,  // Priority
-	true,  // Ö´ĞĞºóÉ¾³ı
-	false // ÊÇ·ñÄÜÔÚÎŞÒâÊ¶×´Ì¬ÏÂÊ¹ÓÃ
-] remoteExec ["BIS_fnc_holdActionAdd", 0, player];	// MP¼æÈİ
-//µ¥ÈËÓÎÏ·Ö»ĞèÒªÕâÃ´×ö¼´¿É
-[ 
+	12, // å®ŒæˆåŠ¨ä½œæ‰€éœ€æ—¶é—´
+	0, // Priority
+	true, // æ‰§è¡Œååˆ é™¤
+	false // æ˜¯å¦èƒ½åœ¨æ— æ„è¯†çŠ¶æ€ä¸‹ä½¿ç”¨
+] remoteExec ["BIS_fnc_holdActionAdd", 0, player];	// MPå…¼å®¹
+// å•äººæ¸¸æˆåªéœ€è¦è¿™ä¹ˆåšå³å¯
+[
 	BIS_toCam, 
-	"²é¿´",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-	"_this distance _target < 3",
-	"_caller distance _target < 3",
-	{ }, 
-	{},  
-	{ execVM "vedio_Complete.sqf"}, 
-	{},
-	[],
-	3,
+	"æŸ¥çœ‹", 
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa", 
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa", 
+	"_this distance _target < 3", 
+	"_caller distance _target < 3", 
+	{}, 
+	{}, 
+	{execVM "vedio_Complete.sqf"}, 
+	{}, 
+	[], 
+	3, 
 	0, 
 	true, 
 	false
- ] call BIS_fnc_holdActionAdd;
+] call BIS_fnc_holdActionAdd;
 
-"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa" //ËÑË÷
-"\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa" //Ì¸»°
+"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa" // æœç´¢
+"\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa" // è°ˆè¯
 
-//ÆôÓÃ±£´æÓÎÏ·
+// å¯ç”¨ä¿å­˜æ¸¸æˆ
 enableSaving [true, true];
 
-//ÉèÖÃµØÍ¼±ê¼Ç¿É¼ûĞÔ/ÑÕÉ«
+// è®¾ç½®åœ°å›¾æ ‡è®°å¯è§æ€§/é¢œè‰²
 "marker" setMarkerAlphaLocal 0.5;
 "marker" setMarkerAlpha 0.5;
-//ÔÚÍæ¼ÒÃæÇ°´´½¨Ò»¸öÖ±Éı»úÍ£»úÆº
-createVehicle [ "Land_HelipadSquare_F", player modelToWorld [0, 10, 0]];
+// åœ¨ç©å®¶é¢å‰åˆ›å»ºä¸€ä¸ªç›´å‡æœºåœæœºåª
+createVehicle ["Land_HelipadSquare_F", player modelToWorld [0, 10, 0]];
+"Land_HelipadEmpty_F";
+/*===================================åŠ¨ä½œæ•æ‰=======================================*/
 
-/*===================================¶¯×÷²¶×½=======================================*/
-
-//Â¼ÖÆÔØ¾ßBIS_vehicleµÄ¹ì¼£
+// å½•åˆ¶è½½å…·BIS_vehicleçš„è½¨è¿¹
 [vehicle player, 240] spawn BIS_fnc_UnitCapture;
 
-//Â¼ÖÆÔØ¾ß¹ì¼££¬Esc½áÊøºó£¬Ê¹ÓÃF1¸´ÖÆÊı¾İ¡£´´½¨Ò»¸öscenes.sqfµÄÎÄ¼ş£¬´ò¿ª²¢Õ³ÌùÊı¾İºó±£´æ
-//ÔÚinit.sqf
+// å½•åˆ¶è½½å…·è½¨è¿¹ï¼ŒEscç»“æŸåï¼Œä½¿ç”¨F1å¤åˆ¶æ•°æ®ã€‚åˆ›å»ºä¸€ä¸ªscenes.sqfçš„æ–‡ä»¶ï¼Œæ‰“å¼€å¹¶ç²˜è´´æ•°æ®åä¿å­˜
+// åœ¨init.sqf
 myscenes = call compile preprocessfile "scenes.sqf";
-//½øÈëÓÎÏ·Ö´ĞĞÃüÁî
-[BIS_vehicle, myscenes] spawn BIS_fnc_Unitplay;
-//ÈÃÔØ¾ß»Ø·ÅÂ¼ÖÆµÄÂ·Ïß [ÔØ¾ß,Êı¾İ,nil,nil,nil,nil,Ìø¹ı¶à³¤Ê±¼ä]
-[BIS_vehicle , rescue , nil , nil , nil , nil , 5] spawn BIS_fnc_Unitplay;
 
-//ÔÚ¼ò±¨½áÊøºó²¥·ÅÊÓÆµ
+// è¿›å…¥æ¸¸æˆæ‰§è¡Œå‘½ä»¤
+[BIS_vehicle, myscenes] spawn BIS_fnc_Unitplay;
+// è®©è½½å…·å›æ”¾å½•åˆ¶çš„è·¯çº¿ [è½½å…·, æ•°æ®, nil, nil, nil, nil, è·³è¿‡å¤šé•¿æ—¶é—´]
+[BIS_vehicle, rescue, nil, nil, nil, nil, 5] spawn BIS_fnc_Unitplay;
+
+// åœ¨ç®€æŠ¥ç»“æŸåæ’­æ”¾è§†é¢‘
 ["a3\missions_f_epa\video\a_m01_quotation.ogv"] spawn BIS_fnc_quotations;
-//a3\missions_f_epa\video\c_out2_sometime_later.ogv
-//init.sqf:Èç¹ûĞèÒª£¬µÈ´ıÈÎÎñ¿ªÍ·Ó°Æ¬ÏûÊ§ºóÖ´ĞĞ¡£·µ»ØÎªtrue
+// a3\missions_f_epa\video\c_out2_sometime_later.ogv
+// init.sqf:å¦‚æœéœ€è¦ï¼Œç­‰å¾…ä»»åŠ¡å¼€å¤´å½±ç‰‡æ¶ˆå¤±åæ‰§è¡Œã€‚è¿”å›ä¸ºtrue
 waitUntil {BIS_fnc_quotations_playing || !(isNil "BIS_fnc_quotations_skip")};
 waitUntil {!BIS_fnc_quotations_playing || !(isNil "BIS_fnc_quotations_skip")};
 
-//µ­Èë£¬µ­³öºÚÆÁ
-titleCut ["", "BLACK FADED", 10e10];
-titleCut ["", "BLACK IN", 3];
-//ÏòÍæ¼ÒÕ¹Ê¾ÌáÊ¾
+// è¿›å…¥é»‘å±
+cutText ["", "BLACK FADED", 10e10];
+// å±å¹•æ–‡å­— [æ–‡æœ¬, ç±»å‹, æŒç»­æ—¶é—´]
+cutText ["æ–‡æœ¬", "BLACK FADED", 3];
+// 3ç§’åæ·¡å‡ºé»‘å±, æ¢å¤ç”»é¢
+cutText ["", "BLACK IN", 3];
+// å‘ç©å®¶å±•ç¤ºæç¤º
 [["Common", "GPS"]] call BIS_fnc_advHint;
 
-//´´½¨Ò»¸ö×écreateGroup [±ß£¬deleteWhenEmpty] deleteWhenEmptyÉèÖÃÎªtrueÊ±Ã»ÓĞµ¥Ôª»áÉ¾³ı
+åˆ›å»ºä¸€ä¸ªç»„createGroup [è¾¹ï¼ŒdeleteWhenEmpty] deleteWhenEmptyè®¾ç½®ä¸ºtrueæ—¶æ²¡æœ‰å•å…ƒä¼šåˆ é™¤
 private _group = createGroup [east, true];
 bis_group = createGroup Independent;
-//´´½¨µ¥Ôªtype createUnit [Î»ÖÃ¡¢×é¡¢³õÊ¼»¯¡¢¼¼ÄÜ¡¢µÈ¼¶]
-//¼¼ÄÜÄ¬ÈÏÎª0.5µÈ¼¶Ä¬ÈÏPRIVATE
-"B_soldier_M_F"  createUnit  [position  player , group player ,"myUnit = this" ] 
+// åˆ›å»ºå•å…ƒtype createUnit [ä½ç½®ã€ç»„ã€åˆå§‹åŒ–ã€æŠ€èƒ½ã€ç­‰çº§]
+// æŠ€èƒ½é»˜è®¤ä¸º0.5ç­‰çº§é»˜è®¤PRIVATE
+"B_soldier_M_F" createUnit [position player, group player, "myUnit = this"] 
 private _Adams = createGroup west;
-"B_soldier_TL_F" createUnit [position player ,_Adams ,"BIS_Adams = this",1 ,"SERGEANT"];
+"B_soldier_TL_F" createUnit [position player, _Adams, "BIS_Adams = this", 1, "SERGEANT"];
 BIS_Adams setGroupId ["Adams"];
-BIS_Adams setName ["Adams","Adams","Adams"];
+BIS_Adams setName ["Adams", "Adams", "Adams"];
 [BIS_Adams, "Martinez", "Male01ENGB", 1.0, "Adams"] call BIS_fnc_setIdentity;
 [player] join BIS_Adams;
 
-_unit createGroup west createUnit ["B_soldier_TL_F", [0,0,0], [], 0, "none"];
-_unit domove [0,50,0]
+_unit createGroup west createUnit ["B_soldier_TL_F", [0, 0, 0], [], 0, "none"];
+_unit domove [0, 50, 0]
 
-//ÆÁÄ»²¶»ñ
+// å±å¹•æ•è·
 screenshot "";
 screenshot "testFile.png";
 
-//¼òµ¥ÈÎÎñ¶Ô»°µÄÖÆ×÷,Ê×ÏÈÔÚÈÎÎñÎÄ¼ş¼ĞÄÚĞÂ½¨Ò»¸öÎÄµµ£¬¸ü¸ÄÎÄ¼şÃûÎª£ºmissionConversations.sqf  È»ºóÊäÈëÒÔÏÂÄÚÈİ
-case "01_Start": {
-		
+// ä»»åŠ¡å¯¹è¯çš„åˆ¶ä½œ, é¦–å…ˆåœ¨ä»»åŠ¡æ–‡ä»¶å¤¹å†…æ–°å»ºä¸€ä¸ªæ–‡æ¡£ï¼Œæ›´æ”¹æ–‡ä»¶åä¸ºï¼šmissionConversations.sqf ç„¶åè¾“å…¥ä»¥ä¸‹å†…å®¹
+case "01_Start":
+{
+	// ç¦ç”¨è§’è‰²è‡ªä¸»æ— çº¿ç”µ
+	enableSentences false;
+	// èŠå¤©æ–‡æœ¬
 	player groupchat "text_1";
+	// ä¸Šä¸€å¥è¯å’Œä¸‹ä¸€å¥è¯ä¸­é—´æš‚åœå¤šå°‘ç§’
 	sleep 2;
-	player sideChat "test_2";	
+	player sideChat "test_2";
+	sleep 3;
+	// å¯¹è¯ç»“æŸåé‡æ–°å¯ç”¨èŠå¤©
+	enableSentences true;
 };
 
-//È»ºó·µ»Ø±à¼­Æ÷²¢¿ªÊ¼ÓÎÏ·£¬ÊäÈë
-"01_Start" spawn BIS_fnc_missionConversations;
+// æ¯æ®µå¯¹è¯æ ¼å¼ä¸º case "åºå·_æ ‡é¢˜" : {èŠå¤©å†…å®¹};
+case "02_InHeli":
+{
+	enableSentences false;
+	BIS_player sideChat "å·¦æ–¹å®‰å…¨ï¼Œå³æ–¹å®‰å…¨ï¼Œåæ–¹å®‰å…¨ã€‚";
+	sleep 4;
+	enableSentences true;
+};
 
-//Ìí¼ÓÂ·µã
-_wp1 = group player_heliD addwaypoint [getPos DemonLand ,0];
+
+// è¿”å›ç¼–è¾‘å™¨å¹¶å¼€å§‹æ¸¸æˆï¼Œè¾“å…¥caseå’Œ:ä¹‹é—´çš„å­—ç¬¦ä¸²+ spawn BIS_fnc_missionConversations;æ‰§è¡Œä¾¿å¯ä»¥ç”Ÿæˆå¯¹è¯
+"01_Start" spawn BIS_fnc_missionConversations;
+"02_InHeli" spawn BIS_fnc_missionConversations;
+
+// æ·»åŠ è·¯ç‚¹
+_wp1 = group player_heliD addwaypoint [getPos DemonLand, 0];
 _wp1 setWaypointType "TR UNLOAD";
 
-_wp2 = group player addwaypoint [getMarkerPos "marker_2",0];
+_wp2 = group player addwaypoint [getMarkerPos "marker_2", 0];
 _wp2 showWaypoint "NEVER";
-_wp2 setWaypointVisible  false;
+_wp2 setWaypointVisible false;
 _wp2 setWaypointType "SAD";
 
-//Ìí¼Óº½µã±í´ïÊ½ £ºº½µã setWaypointStatements [Ìõ¼ş£¬±í´ïÊ½]
+// æ·»åŠ èˆªç‚¹è¡¨è¾¾å¼ï¼šèˆªç‚¹ setWaypointStatements [æ¡ä»¶ï¼Œè¡¨è¾¾å¼]
 _wp2 setWaypointStatements ["true", "player setdamage 1"];
 
 {
-	_x = group player addwaypoint [getMarkerPos "marker_0",0];
+	_x = group player addwaypoint [getMarkerPos "marker_0", 0];
 	_x showWaypoint "NEVER";
-	_x setWaypointVisible  false;
+	_x setWaypointVisible false;
 	_x setWaypointStatements ["true", "player setdamage 1"];
 } forEach _wp1;
 
+// ä¸ºå®ä½“æ·»åŠ æŒ‰é’®æ“ä½œ
+this addAction
+[
+	"title", 
+	{
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	}, 
+	nil, 
+	1.5, 	// ä¼˜å…ˆçº§
+	true, 	// åœ¨æ¡ä»¶æ»¡è¶³æ—¶æç¤ºæ–‡å­—
+	true, 	// é€‰æ‹©åæ˜¯å¦éšè—èœå•, (è¯¥æ“ä½œä¸ä¼šè¢«ç§»é™¤)
+	"", 		// å¿«æ·é”® å¦‚æœè®¾ç½®äº†å¿«æ·é”®ï¼Œæ­¤æŒ‰é”®å°†ä»…è§¦å‘èœå•
+	"true", 	// æ¡ä»¶ï¼Œè¯¥å­—æ®µå¯ç”¨å‚æ•°_target - æ“ä½œé™„åŠ å¯¹è±¡ _this æ“ä½œè€… _originalTarget åŸå§‹å¯¹è±¡ _actionId æ“ä½œID
+	50, 		// è§¦å‘åŠå¾„(æœ€å¤§50)
+	false, 	// æ˜¯å¦å‘æ˜è¿·çš„ç©å®¶æ˜¾ç¤º
+	"", 		// æ¥è‡ªGemmetryçš„é¡¶ç‚¹åç§°
+	""		// æ¥è‡ªMemoryçš„é¡¶ç‚¹åç§°ï¼Œå¦‚æœGemoetryå­˜åœ¨ï¼Œåˆ™ä¸ä½¿ç”¨æ­¤é¡¹
+];
 
-/*=======================================µØÍ¼Óë±ê¼Ç=======================================*/
+/*=======================================åœ°å›¾ä¸æ ‡è®°=======================================*/
 
 [] spawn {
-	openmap [true,false];//Ç¿ÖÆ´ò¿ªµØÍ¼£¬µ«¿ÉÒÔ¹Ø±Õ
+	openmap [true, false]; // å¼ºåˆ¶æ‰“å¼€åœ°å›¾ï¼Œä½†å¯ä»¥å…³é—­
 	sleep 1.5;
-	["Marker_0", getMarkerPos "Marker_1" , 1, 0] spawn BIS_fnc_movemarker;// Ò»ÃëÄÚÒÆ¶¯µ½marker_1
+	["Marker_0", getMarkerPos "Marker_1", 1, 0] spawn BIS_fnc_movemarker; // ä¸€ç§’å†…ç§»åŠ¨åˆ°marker_1
 	sleep 1;
-	["marker_2", 1, 3] spawn BIS_fnc_blinkMarker ; // Ê¹ÓÃ¡°3¡±Ãë¼ä¸ôÉÁË¸¡°10¡±´Î
+	["marker_2", 1, 3] spawn BIS_fnc_blinkMarker; // ä½¿ç”¨â€œ3â€ç§’é—´éš”é—ªçƒâ€œ10â€æ¬¡
 
 };
 
-/*=====================================´¥·¢Æ÷====================================*/
-//¼ì²é´¥·¢Æ÷ÊÇ·ñ»î¶¯(±»¼¤»î·µ»Øtrue)
+/*=====================================è§¦å‘å™¨====================================*/
+// æ£€æŸ¥è§¦å‘å™¨æ˜¯å¦æ´»åŠ¨(è¢«æ¿€æ´»è¿”å›true)
 triggerActivated _tri;
 
-//½«¶ÔÏóÍ¬²½ÖÁµ¥Ôª»òÕßµ¥ÔªÁĞ±í
-_acm synchronizeObjectsAdd player; //´¥·¢Æ÷»òÕßÄ£¿é±»Í¬²½µ½Íæ¼Ò
-_acm synchronizeObjectsAdd units player; //´¥·¢Æ÷»òÕßÄ£¿é±»Í¬²½µ½Íæ¼ÒĞ¡¶ÓµÄÃ¿¸ö³ÉÔ±
-//Í¬²½¶ÔÏóÉ¾³ı
+// å°†å¯¹è±¡åŒæ­¥è‡³å•å…ƒæˆ–è€…å•å…ƒåˆ—è¡¨
+_acm synchronizeObjectsAdd player; // è§¦å‘å™¨æˆ–è€…æ¨¡å—è¢«åŒæ­¥åˆ°ç©å®¶
+_acm synchronizeObjectsAdd units player; // è§¦å‘å™¨æˆ–è€…æ¨¡å—è¢«åŒæ­¥åˆ°ç©å®¶å°é˜Ÿçš„æ¯ä¸ªæˆå‘˜
+// åŒæ­¥å¯¹è±¡åˆ é™¤
 player synchronizeObjectsRemove [_object1, _object2, _object3];
+// æ£€æŸ¥å®ä½“åŒæ­¥çš„å¯¹è±¡åˆ—è¡¨
+synchronizedObjects _logic;
+/*=======================================================æ•°æ®ç±»å‹========================================================================*/
+// å±•å¼€ç»™å®šæ•°ç»„
+flatten [1, [2], [[3]], [[[4]]]]; // returns [1, 2, 3, 4]
+// è¿”å›ç»™å®šå˜é‡çš„ç±»å‹ typeName ä»»ä½•ä¸œè¥¿
+hint typeName 0;					// SCALAR
+hint typeName "";					// STRING
+hint typeName true;					// BOOL
+hint typeName [];					// ARRAY
+hint typeName {};					// CODE
+hint typeName scriptNull;			// SCRIPT (since Arma 3 v1.32)
+hint typeName objNull;				// OBJECT
+hint typeName grpNull;				// GROUP
+hint typeName controlNull;			// CONTROL
+hint typeName teamMemberNull;		// TEAM_MEMBER
+hint typeName displayNull;			// DISPLAY
+hint typeName taskNull;				// TASK
+hint typeName locationNull;			// LOCATION
+hint typeName sideUnknown;			// SIDE
+hint typeName text "";				// TEXT
+hint typeName configFile;			// CONFIG
+hint typeName configNull;			// CONFIG (since Arma 3 v1.54)
+hint typeName missionNamespace;		// NAMESPACE
+hint typeName diaryRecordNull;		// DIARY_RECORD (since Arma 3 v2.00)
+hint typeName createHashMap;		// HASHMAP (since Arma 3 v2.02)
 
-/*=======================================================Êı¾İÀàĞÍ========================================================================*/
-//Õ¹¿ª¸ø¶¨Êı×é
-flatten [1, [2], [[3]], [[[4]]]]; //returns [1, 2, 3, 4]
-//·µ»Ø¸ø¶¨±äÁ¿µÄÀàĞÍ typeName ÈÎºÎ¶«Î÷
-hint typeName 0;					//SCALAR
-hint typeName "";					//STRING
-hint typeName true;					//BOOL
-hint typeName [];					//ARRAY
-hint typeName {};					//CODE
-hint typeName scriptNull;			//SCRIPT (since Arma 3 v1.32)
-hint typeName objNull;				//OBJECT
-hint typeName grpNull;				//GROUP
-hint typeName controlNull;			//CONTROL
-hint typeName teamMemberNull;		//TEAM_MEMBER
-hint typeName displayNull;			//DISPLAY
-hint typeName taskNull;				//TASK
-hint typeName locationNull;			//LOCATION
-hint typeName sideUnknown;			//SIDE
-hint typeName text "";				//TEXT
-hint typeName configFile;			//CONFIG
-hint typeName configNull;			//CONFIG (since Arma 3 v1.54)
-hint typeName missionNamespace;		//NAMESPACE
-hint typeName diaryRecordNull;		//DIARY_RECORD (since Arma 3 v2.00)
-hint typeName createHashMap;		//HASHMAP (since Arma 3 v2.02)
-
-//¼ì²é¸ø¶¨Â·¾¶µÄÎÄ¼şÊÇ·ñ´æÔÚ
+// æ£€æŸ¥ç»™å®šè·¯å¾„çš„æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 fileExists "\Modules_f_joe\Modules_shared\img\goddess_joe.paa";
 
-//¼ì²éÊı¾İ£¬±È½ÏÊ±Çø·Ö´óĞ¡Ğ´
-0 in [1,2,3,0]; //true
-"abc" in ["abc","a","d"]; //true
-"A" in ["a","b","b"]; //false Çø·Ö´óĞ¡Ğ´
-"door" in "door_01_rot" //true
-_unit in _vehicle; //ÔÚ³µÄÚ·µ»Øtrue
-private _isInside = [1000,2000,0] in MyLocation; //¼ì²éÎ»ÖÃÊÇ·ñÔÚÇøÓòÄÚ
-/*========================================ÆäËû=========================================*/
-//²¥·ÅÒôÀÖ£º¾¯±¨
+// æ£€æŸ¥æ•°æ®ï¼Œæ¯”è¾ƒæ—¶åŒºåˆ†å¤§å°å†™
+0 in [1, 2, 3, 0]; // true
+"abc" in ["abc", "a", "d"]; // true
+"A" in ["a", "b", "b"]; // false åŒºåˆ†å¤§å°å†™
+"door" in "door_01_rot" // true
+_unit in _vehicle; // åœ¨è½¦å†…è¿”å›true
+private _isInside = [1000, 2000, 0] in MyLocation; // æ£€æŸ¥ä½ç½®æ˜¯å¦åœ¨åŒºåŸŸå†…
+
+// æ£€æŸ¥ç»™å®šé…ç½®çš„æ¥æº(CfgPatches)çš„æ’ä»¶æ•°ç»„
+configSourceAddonList (configFile >> "CfgVehicles" >> "Man"); // returns ["A3_Data_F", "A3_Characters_F", "A3_Data_F_Curator", "A3_Air_F_Heli"]
+// è¿”å›åŒ…å«è®¾å¤‡æ‰€å±æ’ä»¶çš„åˆ—è¡¨ã€‚
+unitAddons typeOf player; // ["A3_Characters_F_BLUFOR"]
+
+// æ›´é«˜æ•ˆçš„ç¼–è¯‘è„šæœ¬ compileScript [è·¯å¾„, æœ€ç»ˆ(é»˜è®¤false), prefixHeader]
+JLS_fnc_myScript = compileScript ["a3\props_f_enoch\military\equipment\scripts\meteo.sqf"];
+
+// å°†å…ƒç´ æ·»åŠ åˆ°æ•°ç»„æœ«å°¾ï¼Œä¸ä¼šæ·»åŠ é‡å¤å…ƒç´ 
+_arr = [1, 2, 3];
+_index = _arr pushBackUnique 3;
+hint str [_index, _arr]; // [-1, [1, 2, 3]]Â 
+/*========================================å…¶ä»–=========================================*/
+// æ’­æ”¾éŸ³ä¹ï¼šè­¦æŠ¥
 5 fadeMusic 0.25;
 playMusic "Track13_StageC_negative";
 addMusicEventHandler ["MusicStop", "playMusic 'Track13_StageC_negative';"];
-//¸ù¾İµ±Ç°ÓÎÏ·ÓïÑÔ·µ»Ø±¾µØ»¯×Ö·û´®µÄÖµ,Ãû³ÆÔÚlanguage¿ªÍ·µÄpboÕÒµ½stringtable.xmlÎÄ¼şÖĞ
+// æ ¹æ®å½“å‰æ¸¸æˆè¯­è¨€è¿”å›æœ¬åœ°åŒ–å­—ç¬¦ä¸²çš„å€¼, åç§°åœ¨languageå¼€å¤´çš„pboæ‰¾åˆ°stringtable.xmlæ–‡ä»¶ä¸­
 localize "str_a3_a_m02_45_keep_moving_alp_0";
-format ["%1 - %2",localize "qsl_a3_Joe_Goddess_name",localize "qsl_a3_Joe_BigJoe_name"];
-//Ö¸¶¨×Ö·û´®ÊÇ·ñ¾ßÓĞ±¾µØ»¯Ãû³Æ
+format ["%1 - %2", localize "qsl_a3_Joe_Goddess_name", localize "qsl_a3_Joe_BigJoe_name"];
+// æŒ‡å®šå­—ç¬¦ä¸²æ˜¯å¦å…·æœ‰æœ¬åœ°åŒ–åç§°
 
 isLocalized "str_a3_a_m02_45_keep_moving_alp_0";
 
-//°Ñ¸Ã±äÁ¿ÏòÈ«Çò¹ã²¥,±ØĞëÓĞ·µ»ØÖµ
+// æŠŠè¯¥å˜é‡å‘å…¨çƒå¹¿æ’­, å¿…é¡»æœ‰è¿”å›å€¼
 publicVariable "BIS_myvar";
 
-//ÅÉÏµRGBAÑÕÉ«±í
-[0,0.3,0.6,1] 	//À¶ColorWEST	
-[0.5,0,0,1]		//ºìColorEAST	
-[0,0.5,0,1]		//ÂÌColorGUER	
-[0.4,0,0.5,1]	//×ÏColorCIV	
-[0.7,0.6,0,1]	//»ÆColorUNKNOWN	
+// æ´¾ç³»RGBAé¢œè‰²è¡¨
+[0, 0.3, 0.6, 1] 	// è“ColorWEST	
+[0.5, 0, 0, 1]		// çº¢ColorEAST	
+[0, 0.5, 0, 1]		// ç»¿ColorGUER	
+[0.4, 0, 0.5, 1]	// ç´«ColorCIV	
+[0.7, 0.6, 0, 1]	// é»„ColorUNKNOWN	
 
-//ÅÉÏµÑÕÉ«»ñÈ¡,µ«Ò»°ãÖ»ÓĞÉÏ·½µÄÎåÖÖ¾ä·¨ side call BIS_fnc_sideColor
+// æ´¾ç³»é¢œè‰²è·å–, ä½†ä¸€èˆ¬åªæœ‰ä¸Šæ–¹çš„äº”ç§å¥æ³• side call BIS_fnc_sideColor
 side player call BIS_fnc_sideColor;
 side vehicle player call BIS_fnc_sideColor;
 side group player call BIS_fnc_sideColor;
 
-//RGBA×ª HTMLÑÕÉ«
-[0,0.5,0,1] call BIS_fnc_colorRGBtoHTML;
+// RGBAè½¬ HTMLé¢œè‰²
+[0, 0.5, 0, 1] call BIS_fnc_colorRGBtoHTML;
 
-//½«Êı¾İÀàĞÍ»ò±äÁ¿ºÍ´úÂëµÄ·µ»ØÖµ×ª»»Îª×Ö·û´®,str µÄÓÅÏÈ¼¶²¢²»¸ß£¬ĞèÒªÊ±½«Òª×ª»¯µÄ´úÂëÓÃÀ¨ºÅ()
+// å°†æ•°æ®ç±»å‹æˆ–å˜é‡å’Œä»£ç çš„è¿”å›å€¼è½¬æ¢ä¸ºå­—ç¬¦ä¸², str çš„ä¼˜å…ˆçº§å¹¶ä¸é«˜ï¼Œéœ€è¦æ—¶å°†è¦è½¬åŒ–çš„ä»£ç ç”¨æ‹¬å·()
 str 1; // "1"
 str true; // "true"
 
-//Êı×é×ª×Ö·û´®,²¢ÔÚÆäÖĞ²åÈëÌØ¶¨ÔªËØ
-[1,"2",true] joinString ""; // "12true"
+// æ•°ç»„è½¬å­—ç¬¦ä¸², å¹¶åœ¨å…¶ä¸­æ’å…¥ç‰¹å®šå…ƒç´ 
+[1, "2", true] joinString ""; // "12true"
 
-//Ö´ĞĞ×Ö·û´®ÃüÁî
+// æ‰§è¡Œå­—ç¬¦ä¸²å‘½ä»¤
 _codeString = "player setdamage 1";
-_code = compile _code; // {player setdamage 1}; ÊÇ²»ÊÇºÜÊìÏ¤£¿
+_code = compile _code; // {player setdamage 1}; æ˜¯ä¸æ˜¯å¾ˆç†Ÿæ‚‰ï¼Ÿ
 call _code;
 
-//¸ø¶¨µÄ×Ö·û´®×ª»¯Îªcode
-_string = ["player", "sideChat", str "ÕâÊÇÎÒµÄ¿´·¨" ] joinString " ";//×¢Òâ" "±È""ÄÚ¶àÊäÈëÁËÒ»¸ö¿Õ¸ñ·ñÔòÄãµÄ½á¹û»á±ä³ÉÏÂÃæÄÇÑù
-"playersideChat""ÕâÊÇÎÒµÄ¿´·¨"""; //ÕâÊÇÍêÈ«²»¿ÉµÄ
-//ÕıÈ·µÄ½á¹ûÊÇ
-_code = compile _string;//compile "player sideChat ""ÕâÊÇÎÒµÄ¿´·¨"""
-_code; //{player sideChat "ÕâÊÇÎÒµÄ¿´·¨" };
+// ç»™å®šçš„å­—ç¬¦ä¸²è½¬åŒ–ä¸ºcode
+_string = ["player", "sideChat", str "è¿™æ˜¯æˆ‘çš„çœ‹æ³•"] joinString " "; // æ³¨æ„" "æ¯”""å†…å¤šè¾“å…¥äº†ä¸€ä¸ªç©ºæ ¼å¦åˆ™ä½ çš„ç»“æœä¼šå˜æˆä¸‹é¢é‚£æ ·
+"playersideChat""è¿™æ˜¯æˆ‘çš„çœ‹æ³•"""; // è¿™æ˜¯å®Œå…¨ä¸å¯çš„
+// æ­£ç¡®çš„ç»“æœæ˜¯
+_code = compile _string; // compile "player sideChat ""è¿™æ˜¯æˆ‘çš„çœ‹æ³•"""
+_code; // {player sideChat "è¿™æ˜¯æˆ‘çš„çœ‹æ³•"};
 
-//×Ö·û´®²ğ·ÖÊı×é
-_str = "1,2 3" splitString ", "; //Ö¸¶¨Ê²Ã´×Ö·û×öÎª·Ö¸ôµÄ"±êµã",ËûÃÇ»á±»É¾³ı,½á¹û£º["1","2","3"]
-"123456" splitString "24"; //["1","3","56"] 2ºÍ4±»Ìæ»»·Ö¸ô·û
-"ABCDEFG" splitString "DB";//["A","C","EFG"] DºÍE±»Ìæ»»Îª·Ö¸ô·û
-/*===================================ÈÎÎñÉè¶¨===================================*/
-//¸øORBATÄ£¿éÌí¼ÓµÄÍ¼±êÌí¼ÓÒ»¸öÎÆÀí£¬±ÈÈç±»ÏûÃğ
-[missionconfigfile >> "CfgORBAT" >> "BIS" >> "B_1_C_2_4", "mil_destroy", [1,0,0,1], 1.2,1.2,45] call BIS_fnc_ORBATAddGroupOverlay;
+// å­—ç¬¦ä¸²æ‹†åˆ†æ•°ç»„
+_str = "1, 2 3" splitString ", "; // æŒ‡å®šä»€ä¹ˆå­—ç¬¦åšä¸ºåˆ†éš”çš„"æ ‡ç‚¹", ä»–ä»¬ä¼šè¢«åˆ é™¤, ç»“æœï¼š["1", "2", "3"]
+"123456" splitString "24"; // ["1", "3", "56"] 2å’Œ4è¢«æ›¿æ¢åˆ†éš”ç¬¦
+"ABCDEFG" splitString "DB"; // ["A", "C", "EFG"] Då’ŒEè¢«æ›¿æ¢ä¸ºåˆ†éš”ç¬¦
+// ç§»åŠ¨EDENç›¸æœºä½ç½®ä¸ºtrueæ—¶ç›¸æœºä»¥è§‚çœ‹è§†è§’ç§»åŠ¨ã€ä¸ºfalseæ—¶ç›¸æœºç§»åŠ¨åˆ°ç²¾ç¡®ä½ç½®
+move3DENCamera [[5956.5049, 19.958897, 6662.6099], true]
+/*===================================ä»»åŠ¡è®¾å®š===================================*/
+// ç»™ORBATæ¨¡å—æ·»åŠ çš„å›¾æ ‡æ·»åŠ ä¸€ä¸ªçº¹ç†ï¼Œæ¯”å¦‚è¢«æ¶ˆç­
+[missionconfigfile >> "CfgORBAT" >> "BIS" >> "B_1_C_2_4", "mil_destroy", [1, 0, 0, 1], 1.2, 1.2, 45] call BIS_fnc_ORBATAddGroupOverlay;
 
-//ÉèÖÃÊ±¼äÏµÊı 0.1 - 120
+// è®¾ç½®æ—¶é—´ç³»æ•° 0.1 - 120
 setTimeMultiplier 0.5;
-//ÉèÖÃÄ£ÄâËÙ¶È Ã»ÓĞ¶¨Òå¿ìÂı
+// è®¾ç½®æ¨¡æ‹Ÿé€Ÿåº¦ æ²¡æœ‰å®šä¹‰å¿«æ…¢
 setAccTime 0.1;
-//ÉèÖÃÊ±¼ä
+// è®¾ç½®æ—¶é—´
 setDate [2034, 04, 24, 09, 45];
 
-//½«µÆ¹âÉèÖÃÎªºì¹â,¶ÔÏó±ØĞëÊÇlightÀàĞÍ,²»ÊÊÓÃÓÚ½¨ÖşµÆ
-{ 
+// å°†ç¯å…‰è®¾ç½®ä¸ºçº¢å…‰, å¯¹è±¡å¿…é¡»æ˜¯lightç±»å‹, ä¸é€‚ç”¨äºå»ºç­‘ç¯
+{
 	_x setLightBrightness 2.0;
 	_x setLightAmbient [1.0, 0.1, 0.1];
 	_x setLightColor [1.0, 0.1, 0.1];	
 } foreach _lightsource;
 
-//ÔÚ¼Æ»®¿Õ¼äÖĞÖ´ĞĞ´úÂëµÄµÈ´ıÊ±£¬ÓĞÊ±Ê¹ÓÃcallËÆºõ¸üºÃ
-//callÖ»ÊÇÒâÎ¶×Å£º¡°ÔÚÕâÀïÖ´ĞĞ´úÂë¡±£¬¾ÍÏñÄãÈçºÎÊ¹ÓÃ then Ö´ĞĞ´úÂë(if (true) then _code) or do .Òò´Ë£¬Ëü²»»á¸Ä±ä´úÂë»·¾³
-//ÕâÒâÎ¶×Å×öÕâÑùµÄÊÂÇé(¾­³£±»Ê¹ÓÃ)£¬»áÀË·ÑºÜ¶àĞÔÄÜ£º
+// åœ¨è®¡åˆ’ç©ºé—´ä¸­æ‰§è¡Œä»£ç çš„ç­‰å¾…æ—¶ï¼Œæœ‰æ—¶ä½¿ç”¨callä¼¼ä¹æ›´å¥½
+// callåªæ˜¯æ„å‘³ç€ï¼šâ€œåœ¨è¿™é‡Œæ‰§è¡Œä»£ç â€ï¼Œå°±åƒä½ å¦‚ä½•ä½¿ç”¨ then æ‰§è¡Œä»£ç (if (true) then _code) or do .å› æ­¤ï¼Œå®ƒä¸ä¼šæ”¹å˜ä»£ç ç¯å¢ƒ
+// è¿™æ„å‘³ç€åšè¿™æ ·çš„äº‹æƒ…(ç»å¸¸è¢«ä½¿ç”¨)ï¼Œä¼šæµªè´¹å¾ˆå¤šæ€§èƒ½ï¼š
 private _handle = _params spawn MY_fnc_Function;
-waitUntil { scriptDone _handle };
+waitUntil {scriptDone _handle};
 
-//²»ĞèÒª£¬ÒòÎªÓë¼òµ¥µØÕâÑù×ö£¬ÈçÄãËùÔ¸£¬Èç¹ûMY_fnc_FunctionÖĞ²»°üº¬ÈÎºÎspawn¡¢execVM£¬ÄÇÃ´_code2½«ÅÅ¶ÓÖÁcallÍê³Éºó
+// ä¸éœ€è¦ï¼Œå› ä¸ºä¸ç®€å•åœ°è¿™æ ·åšï¼Œå¦‚ä½ æ‰€æ„¿ï¼Œå¦‚æœMY_fnc_Functionä¸­ä¸åŒ…å«ä»»ä½•spawnã€execVMï¼Œé‚£ä¹ˆ_code2å°†æ’é˜Ÿè‡³callå®Œæˆå
 _code1;
 _params call MY_fnc_Function;
 _code2; 
-//ËüÖ´ĞĞÓëÇ°ÃæµÄ´úÂëÍêÈ«ÏàÍ¬µÄÊÂÇé£¬Ö»ÊÇÃ»ÓĞ´´½¨ĞÂµÄ"µ÷¶È³ÌĞòÏß³Ì"²¢ÇÒº¯ÊıÎŞ·ìÖ´ĞĞ£¬ÔÙ¼ÓÉÏÇ°ÃæÌáµ½µÄ¸½¼ÓĞÔÄÜÓÅÊÆ¡£
-//Èç¹ûĞèÒªÔÚ¼Æ»®Íâ»·¾³ÖĞÖ´ĞĞ´úÂë£¬Ôò¿ÉÒÔÊ¹ÓÃ isNil ´úÌæ£ºÎŞÂÛµ±Ç°»·¾³ÈçºÎ£¬MY_fnc_FunctionÊ¼ÖÕ°´¼Æ»®Ö´ĞĞ
+// å®ƒæ‰§è¡Œä¸å‰é¢çš„ä»£ç å®Œå…¨ç›¸åŒçš„äº‹æƒ…ï¼Œåªæ˜¯æ²¡æœ‰åˆ›å»ºæ–°çš„"è°ƒåº¦ç¨‹åºçº¿ç¨‹"å¹¶ä¸”å‡½æ•°æ— ç¼æ‰§è¡Œï¼Œå†åŠ ä¸Šå‰é¢æåˆ°çš„é™„åŠ æ€§èƒ½ä¼˜åŠ¿ã€‚
+// å¦‚æœéœ€è¦åœ¨è®¡åˆ’å¤–ç¯å¢ƒä¸­æ‰§è¡Œä»£ç ï¼Œåˆ™å¯ä»¥ä½¿ç”¨ isNil ä»£æ›¿ï¼šæ— è®ºå½“å‰ç¯å¢ƒå¦‚ä½•ï¼ŒMY_fnc_Functionå§‹ç»ˆæŒ‰è®¡åˆ’æ‰§è¡Œ
 isNil {_params call MY_fnc_Function};
 
-//»òÕßÈç¹ûÃ»ÓĞ²ÎÊı£¬¿ÉÒÔ¼òµ¥µØÕâÑù×ö£º
+// æˆ–è€…å¦‚æœæ²¡æœ‰å‚æ•°ï¼Œå¯ä»¥ç®€å•åœ°è¿™æ ·åšï¼š
 isNil MY_fnc_Function
 
-/*===================================ÖæË¹===================================*/
-//´´½¨ÖæË¹²¢Ìí¼ÓËùÓĞ¿É±à¼­ÎïÌå
+// è·å–å½“å‰ä»»åŠ¡è·¯å¾„
+getMissionPath "";
+
+// åœ¨è§¦å‘å™¨åŒºåŸŸæ’è§æŒ‡å®šç±»å‹çš„äº‹ä»¶ å‚æ•°_densityè¡¨ç¤ºæ•Œäººå¯†åº¦ï¼Œé»˜è®¤ï¼š1
+_density call BIS_fnc_prepareAO;
+/*
+è§¦å‘å™¨æ–‡æœ¬çš„å¯ç”¨é¡¹:
+GEN_infantry	ç”Ÿæˆéšæœºæ­¥å…µå·¡é€»ï¼Œè§¦å‘å™¨å¿…é¡»æ˜¯å¤§äº500mçš„åœ†å½¢
+GEN_patrolVeh	ç”Ÿæˆéšæœºè½¦è¾†ï¼Œå¦‚æœè§¦å‘å™¨åŒæ­¥ç”¨å¹³æ°‘è½¦è¾†ï¼Œå…¶è·¯ç‚¹å°†è¢«ç”Ÿæˆè½¦è¾†ä½¿ç”¨
+	åœ¨è§¦å‘å™¨æ¿€æ´»ä¸­å¯å®šä¹‰ç”Ÿæˆè½½å…·ç±»å‹ car-æ±½è½¦ APC-è£…ç”²è½¦ Tank å¦å…‹
+GEN_ammo		ç”Ÿæˆéšæœºæ•°é‡çš„å¼¹è¯ç®±
+GEN_civilCar	éšæœºç”Ÿæˆä¸€è¾†å¹³æ°‘æ±½è½¦
+*/ 
+
+// åœ¨ç©å®¶ä½ç½®éšæœºç”Ÿæˆäº”ä¸ªè“æ–¹å•å…ƒ è¿”å›å€¼ï¼šç”Ÿæˆçš„ç»„
+BIS_grpStalkers = [getPosATL player, east, 5] call BIS_fnc_spawnGroup;Â  
+// å¼ºåˆ¶ä¸€ä¸ªç»„è·Ÿè¸ªå¦ä¸€ä¸ªç»„ [è·Ÿè¸ªçš„ç»„, è¢«è·Ÿè¸ªçš„ç»„, ç›®æ ‡æ›´æ–°é¢‘ç‡(é»˜è®¤10), è·¯ç‚¹ç²¾åº¦, æ¡ä»¶(å®Œæˆæ¡ä»¶å°†åœæ­¢è·Ÿéš), åœæ­¢æˆ–ç›®æ ‡ä¸å­˜åœ¨æ—¶] spawn BIS_fnc_stalk;
+// åœæ­¢æˆ–ç›®æ ‡ä¸å­˜åœ¨æ—¶: æ•°å­—-0è¿”å›åŸå§‹è·¯ç‚¹, 1æœç´¢50ç±³èŒƒå›´, 2ä»…å›åˆ°åŸå§‹ä½ç½® ä¹Ÿå¯ä»¥å¡«æ ‡è®°ã€ç‰©ä½“æˆ–ä½ç½®ä½œä¸ºç›®çš„åœ°ã€‚è¯¥ç»„ä¼šå‘ç›®çš„åœ°ç§»åŠ¨
+private _stalking = [BIS_grpStalkers, group player] spawn BIS_fnc_stalk;
+/*===================================å®™æ–¯===================================*/
+// åˆ›å»ºå®™æ–¯å¹¶æ·»åŠ æ‰€æœ‰å¯ç¼–è¾‘ç‰©ä½“
 private _moduleGroup = createGroup sideLogic;
 "ModuleCurator_F" createUnit [
-	getPosATL player,
-	_moduleGroup,
-	"this setVariable ['BIS_fnc_initModules_disableAutoActivation', false, true]; myZues = this"
+	getPosATL player, 
+	_moduleGroup, 
+	"this setVariable ['BIS_fnc_initModules_disableAutoActivation', false, true]; BIS_Zeus = this"
 ];
-private _addons = curatorAddons myCurator;
+bis_curator = player;
+BIS_Zeus setvariable ["owner","bis_curator"];
+BIS_Zeus addCuratorEditableObjects [allMissionObjects "all", true];
 
-myZues addCuratorEditableObjects [allMissionObjects "all",true ];
-
-//ÔÚmarker_0±ê¼Ç¸½½ü´´½¨ÉÁµçÄ£¿é
+// private _addons = curatorAddons myCurator;
+// åœ¨marker_0æ ‡è®°é™„è¿‘åˆ›å»ºé—ªç”µæ¨¡å—
 private _pos = markerpos "marker_0" getpos [50 + random 50, random 360];
 private _grp = createGroup sideLogic;
 "ModuleLightning_F" createUnit [
-	_pos ,
-	_grp,
+	_pos, 
+	_grp, 
 	"this setVariable ['BIS_fnc_initModules_disableAutoActivation', false, true];"
 ];
 
-//²éÕÒËùÓĞÖæË¹Ä£¿é
-_zeus = (entities "Logic") select { _x iskindof "ModuleCurator_F"};
-//½«ÈÎÎñ±à¼­Æ÷ÖĞ·ÅÖÃµÄÈ«²¿¶ÔÏóÌí¼ÓÖÁÈÎÎñµÄËùÓĞÖæË¹²Ù×÷Õß
-{_x addCuratorEditableObjects [allMissionObjects "all",true ];} forEach _zeus
+// åœ¨æŒ‡å®šä½ç½®åˆ›å»ºæ¨¡å—
+private _pos = getPosATL player;
+private _grp = createGroup sideLogic;
+"ModuleEndMission_F" createUnit [
+	_pos, 
+	_grp, 
+	"this setVariable ['BIS_fnc_initModules_disableAutoActivation', false, true];"
+];
+
+// æŸ¥æ‰¾æ‰€æœ‰å®™æ–¯æ¨¡å—
+_zeus = (entities "Logic") select {_x iskindof "ModuleCurator_F"};
+// å°†ä»»åŠ¡ç¼–è¾‘å™¨ä¸­æ”¾ç½®çš„å…¨éƒ¨å¯¹è±¡æ·»åŠ è‡³ä»»åŠ¡çš„æ‰€æœ‰å®™æ–¯æ“ä½œè€…
+{
+	player assignCurator _x;
+	_x addCuratorEditableObjects [allMissionObjects "all", true];
+} forEach _zeus;
 
 /*===================================MP===================================*/
-//Ìí¼Ó£¬ÒÆ³ıÖØÉúÎ»ÖÃ
-_respawn = [west,[0,0,0],"ÖØÉúµã"] call BIS_fnc_addRespawnPosition; //[target,id]
-[target,id] call BIS_fnc_removeRespawnPosition;
+// æ·»åŠ ï¼Œç§»é™¤é‡ç”Ÿä½ç½®
+_respawn = [west, [0, 0, 0], "é‡ç”Ÿç‚¹"] call BIS_fnc_addRespawnPosition; // [target, id]
+[target, id] call BIS_fnc_removeRespawnPosition;
 
-/*===================================ÄÍÁ¦===================================*/
-//ÉèÖÃÆôÓÃÄÍÁ¦ÏµÍ³
+/*===================================è€åŠ›===================================*/
+// è®¾ç½®å¯ç”¨è€åŠ›ç³»ç»Ÿ
 player enableStamina true;
 
 /*=================================GUI===================================*/
-//Á÷³©µÄÏÔÊ¾¸ø¶¨ÎÄ±¾£¬Ã»ÓĞÉùÒô
-["Hello, hidden FX", 2, 3, [1,0,0,1], true] spawn BIS_fnc_WLSmoothText; 
-//[ÎÄ±¾¡¢×î¶àÍ¬Ê±ÏÔÊ¾¼¸ĞĞ¡¢³ÖĞøÊ±¼ä¡¢ÑÕÉ«¡¢ÂÖÀª] spawn BIS_fnc_WLSmoothText
+// åœ¨å±å¹•ä¸­å¤®æ˜¾ç¤ºä¸€ä¸ªéå¸¸åŸºæœ¬çš„æ¶ˆæ¯å¯¹è¯æ¡†ã€‚åœ¨æŒ‰ä¸‹â€œç»§ç»­â€ä¹‹å‰ï¼Œç©å®¶çš„æ§åˆ¶æƒå°†è¢«å‰¥å¤ºã€‚æ¶ˆæ¯å¯¹è¯æ¡†å¯ä»¥åœ¨å±å¹•ä¸Šæ‹–åŠ¨ã€‚æŒ‰ä¸‹â€œç»§ç»­â€åï¼Œå†…å®¹å°†åœ¨æ­£å¸¸æç¤ºä¸­æ˜¾ç¤ºã€‚
+"æˆ‘æš‚åœäº†ä½ çš„æ¸¸æˆ" hintC 
+[
+	"åŸå› ï¼š", 
+	"æŒ‰ä¸‹â€œç»§ç»­â€æŒ‰é’®å›åˆ°æ¸¸æˆ", 
+	"æ­¤æ¶ˆæ¯ä¼šåœ¨å³ä¾§ç»§ç»­å±•ç¤ºä¸€æ®µæ—¶é—´"
+];
+// æµç•…çš„æ˜¾ç¤ºç»™å®šæ–‡æœ¬ï¼Œæ²¡æœ‰å£°éŸ³
+["Hello, hidden FX", 2, 3, [1, 0, 0, 1], true] spawn BIS_fnc_WLSmoothText; 
+// [æ–‡æœ¬ã€æœ€å¤šåŒæ—¶æ˜¾ç¤ºå‡ è¡Œã€æŒç»­æ—¶é—´ã€é¢œè‰²ã€è½®å»“] spawn BIS_fnc_WLSmoothText
 
-//ÊÖ¶¯ÔÚÓÒÏÂ½ÇÕ¹Ê¾Ê±¼äºÍÎ»ÖÃOSD,ÀàËÆ¶«·çÈÎÎñ
-[  
-	[  
-		["2035-08-09 ", " "],  
-		["05:11","font='PuristaMedium'"],
+// åœ¨å±å¹•ä¸Šæ·»åŠ æµè¡€æ•ˆæœ
+[5] call BIS_fnc_bloodEffect; // æ˜¾ç¤º5ç§’
+// åœ¨å±å¹•ä¸Šåˆ›å»ºçˆ†ç‚¸æ•ˆæœ å‚æ•° - [å—ä¼¤è€…, é€ æˆçš„ä¼¤å®³] ä½¿ç”¨nilç”¨äºå•çº¯çš„å±å¹•æ•ˆæœ
+[nil, 0.5] call BIS_fnc_dirtEffect;
+// ç»™æŒ‡å®šå•ä½æ·»åŠ IFFæ•ˆæœ, ç”¨äºéç©å®¶å›¢é˜ŸAI
+[units player] call BIS_fnc_EXP_camp_IFF;
+// æ‰‹åŠ¨ä¸ºå•ä½æ·»åŠ å›¾æ ‡æ•ˆæœ
+_unit setVariable ["BIS_iconAlways", true];	// å§‹ç»ˆå±•ç¤º
+_unit setVariable ["BIS_iconShow", false];	// éšè—å›¾æ ‡
+_unit setVariable ["BIS_iconName", false];	// éšè—åç§°
+// æ‰‹åŠ¨åœ¨å³ä¸‹è§’å±•ç¤ºæ—¶é—´å’Œä½ç½®OSD, ç±»ä¼¼ä¸œé£ä»»åŠ¡
+[
+	[
+		["2035-08-09 ", " "], 
+		["05:11", "font='PuristaMedium'"], 
 		["", "<br/>"], 
-		["Connor×ÅÂ½Çø", " "],  
-		["", "<br/>"],  
-		["ÄÏ²¿Stratis", " "]  
-	]  ,
-	safeZoneX - 0.01,
-	safeZoneY + (1 - 0.125) * safeZoneH,
-	true,
+		["Connorç€é™†åŒº", " "], 
+		["", "<br/>"], 
+		["å—éƒ¨Stratis", " "] 
+	], 
+	safeZoneX - 0.01, 
+	safeZoneY + (1 - 0.125) * safeZoneH, 
+	true, 
 	"<t align = 'right' size = '1' font = 'PuristaLight'>%1</t>"
 ] spawn BIS_fnc_typeText2;
 
 
-//´´½¨µçÓ°±ß¿ò£¬¹ı³ÌÖĞÍæ¼ÒÎŞ·¨ÒÆ¶¯£¬µ«¿ÉÒÔÊ¹ÓÃÎäÆ÷¿ª»ğ¡£[Ä£Ê½¡¢³ÖĞøÊ±¼ä¡¢ÉùÒô¡¢ÊÓÍ¼] call BIS_fnc_cinemaBorder
-//Ä£Ê½£º0 - ½øÈë£»1 - Àë¿ª
-[1, 1, ture , ture ] call BIS_fnc_cinemaBorder;
+// åˆ›å»ºç”µå½±è¾¹æ¡†ï¼Œè¿‡ç¨‹ä¸­ç©å®¶æ— æ³•ç§»åŠ¨ï¼Œä½†å¯ä»¥ä½¿ç”¨æ­¦å™¨å¼€ç«ã€‚[æ¨¡å¼ã€æŒç»­æ—¶é—´ã€å£°éŸ³ã€è§†å›¾] call BIS_fnc_cinemaBorder
+// æ¨¡å¼ï¼š0 - è¿›å…¥ï¼›1 - ç¦»å¼€
+[1, 1.5, true, true] call BIS_fnc_cinemaBorder;
 
-/*==================================ÊÂ¼ş´¦Àí³ÌĞò===================================*/
-//Ã¿Ö¡Ö´ĞĞÒ»´Î´úÂë
-addMissionEventHandler ["EachFrame", { /*code*/}];
-//Ìí¼ÓÒ»¸öÊÂ¼ş´¦Àí³ÌĞò¼ì²âÍæ¼ÒÊÇ·ñ¿ª»ğ£¬ÒÔ×ñÑ­ROE
-player addEventHandler [ "Fired", {
+// åœ¨ä»»åŠ¡ä¸­é€”è°ƒå‡ºåŠ è½½ç•Œé¢
+[] spawn {
+
+	startLoadingScreen ["Loading My Mission"]; // åœ¨Arma3ä¸­å¹¶ä¸ä¼šæ˜¾ç¤ºæ­¤æ–‡æœ¬
+	uisleep 0.5;
+	progressLoadingScreen 0.5; // è®¾ç½®ä»»åŠ¡åŠ è½½è¿›åº¦
+	uisleep 0.1; 
+	endLoadingScreen;
+};
+
+// å¼ºåˆ¶å¼¹å‡ºåŠ è½½å±å¹•
+findDisplay 46 createDisplay "RscDisplayClient";
+// å¼¹å‡ºZeus Ping
+cutRsc ["RscCuratorPing", "PLAIN", 2];
+
+/*==================================äº‹ä»¶å¤„ç†ç¨‹åº===================================*/
+// æ¯å¸§æ‰§è¡Œä¸€æ¬¡ä»£ç >>æ³¨æ„ä»£ç æ•ˆç‡ï¼Œä¸è¦åœ¨å¸§å¾ªç¯ä¸­æ‰§è¡Œè¿‡å¤šçš„ä»£ç ï¼
+addMissionEventHandler ["EachFrame", {/*code*/}];
+// æ·»åŠ ä¸€ä¸ªäº‹ä»¶å¤„ç†ç¨‹åºæ£€æµ‹ç©å®¶æ˜¯å¦å¼€ç«ï¼Œä»¥éµå¾ªROE
+player addEventHandler ["Fired", {
 	private ["_unit"];
 	_unit = _this select 0;
 	_weapon = _this select 1;
@@ -997,71 +1159,71 @@ player addEventHandler [ "Fired", {
 		BIS_failedROE = true;
 	} 
 }]; 
-//µ¥Î»¼õÉË
-this addEventHandler ["HandleDamage", {  
-  	params ["_unit", "_selection", "_damage"]; 
+// å•ä½å‡ä¼¤
+this addEventHandler ["HandleDamage", {
+ 	params ["_unit", "_selection", "_damage"]; 
 	
 	damage _unit + _damage * 0.01;
 }];
-//µ±µ¥Î»½«ÎïÆ··ÅÈë»õÎïÏäÊ±´¥·¢²ÎÊıÎª£ºµ¥Î» ÈİÆ÷ ÏîÄ¿Ãû³Æ£¬µ±µ¥Î»ÔÚ×ÔÉí¿â´æÖĞ¸ü»»µ¯Ò©Ê±¿ÉÄÜÒ²»á´¥·¢Ê±¼ä
+// å½“å•ä½å°†ç‰©å“æ”¾å…¥è´§ç‰©ç®±æ—¶è§¦å‘å‚æ•°ä¸ºï¼šå•ä½ å®¹å™¨ é¡¹ç›®åç§°ï¼Œå½“å•ä½åœ¨è‡ªèº«åº“å­˜ä¸­æ›´æ¢å¼¹è¯æ—¶å¯èƒ½ä¹Ÿä¼šè§¦å‘æ—¶é—´
 player addEventHandler ["Put", {
 	params ["_unit", "_container", "_item"];
 
 }];
 
-/*==========================¶ÔÏó½»»¥ÊÂ¼ş============================*/
+/*==========================å¯¹è±¡äº¤äº’äº‹ä»¶============================*/
 
-//´Ëº¯ÊıÍ¨¹ıÏòÆäÌí¼Ó¡°»ñÈ¡Çé±¨¡±Ìí¼Ó²Ù×÷£¬½«¶ÔÏóÉèÖÃÎªÍæ¼Ò¿É¼ìË÷µÄÇé±¨¶ÔÏó¡£
+// æ­¤å‡½æ•°é€šè¿‡å‘å…¶æ·»åŠ â€œè·å–æƒ…æŠ¥â€æ·»åŠ æ“ä½œï¼Œå°†å¯¹è±¡è®¾ç½®ä¸ºç©å®¶å¯æ£€ç´¢çš„æƒ…æŠ¥å¯¹è±¡ã€‚
 [this] call BIS_fnc_initIntelObject;
 
-//for init.sqf
+// for init.sqf
 if (isServer) then
 {
-	//ÈÕ¼ÇÍ¼Æ¬:
+	// æ—¥è®°å›¾ç‰‡:
 	this setVariable [
-		"RscAttributeDiaryRecord_texture", //²»ÒªĞŞ¸Ä
-		"a3\structures_f_epc\Items\Documents\Data\document_secret_01_co.paa", //Í¼Æ¬Â·¾¶£¬×Ô¶¨Òå
+		"RscAttributeDiaryRecord_texture", // ä¸è¦ä¿®æ”¹
+		"a3\structures_f_epc\Items\Documents\Data\document_secret_01_co.paa", // å›¾ç‰‡è·¯å¾„ï¼Œè‡ªå®šä¹‰
 		true
 	];
 
-	//ÈÕ¼Ç±êÌâºÍÃèÊö:
+	// æ—¥è®°æ ‡é¢˜å’Œæè¿°:
 	[
 		this, 
-		"RscAttributeDiaryRecord", //ÀàĞÍ£¬²»¿ÉĞŞ¸Ä
-		["New Intel", "The enemies have a cave troll!"] //Êı×é¸ñÊ½µÄ [±êÌâ, ÃèÊö]
+		"RscAttributeDiaryRecord", // ç±»å‹ï¼Œä¸å¯ä¿®æ”¹
+		["New Intel", "The enemies have a cave troll!"] // æ•°ç»„æ ¼å¼çš„ [æ ‡é¢˜, æè¿°]
 	] call BIS_fnc_setServerVariable;
 
-	//Diary entry shared with (follows MP target rules):
+	// Diary entry shared with (follows MP target rules):
 	this setVariable ["recipients", west, true];
-	//Sides that can interact with the intel object:
+	// Sides that can interact with the intel object:
 	this setVariable ["RscAttributeOwners", [west], true];
 };
 
-//Ïòµ±Ç°¿Í»§¶ËÌí¼Óholdkey¶¯×÷£¬ÔÚÍê³ÉÖ®Ç°½ÇÉ«½«²»»áÒÆ¶¯¸ñÊ½[findDisplay 46, °´¼üÃû³Æ(57Îª¿Õ¸ñ), 2(°´×¡Ê±¼ä), Íê³ÉºóÖ´ĞĞµÄ´úÂë({±í´ïÊ½})] spawn BIS_fnc_holdKey;
-[(findDisplay 46), 57, 2, { systemChat str player }] spawn BIS_fnc_holdKey;
+// å‘å½“å‰å®¢æˆ·ç«¯æ·»åŠ holdkeyåŠ¨ä½œï¼Œåœ¨å®Œæˆä¹‹å‰è§’è‰²å°†ä¸ä¼šç§»åŠ¨æ ¼å¼[findDisplay 46, æŒ‰é”®åç§°(57ä¸ºç©ºæ ¼), 2(æŒ‰ä½æ—¶é—´), å®Œæˆåæ‰§è¡Œçš„ä»£ç ({è¡¨è¾¾å¼})] spawn BIS_fnc_holdKey;
+[(findDisplay 46), 57, 2, {systemChat str player}] spawn BIS_fnc_holdKey;
 
 /*
-	¹Ù·½²¢Ã»ÓĞÖ¸³ö¶îÍâµÄÒÆ³ıholdKey·½Ê½£¬ÒòÎªËûÒ»°ã³öÏÖÔÚ"¿ª³¡½×¶Î",µ±Íæ¼ÒÎ´Ìø¹ıÇÒ´Ë½×¶Î½áÊøºó,´úÂë¾ÍÃ»ÓĞ×÷ÓÃÁË¡£
-	µ«Èç¹ûÄãÓÃÔÚ³¡¾°½×¶Î,ÏÂ·½´úÂëÊÇ¿ÉÓÃµÄ½áÊøÊÖ¶Î¡£
-	µ«ÔÚ¶àÈËÓÎÏ·ÖĞ,Èç¹ûÍæ¼ÒÔÚºóÌ¨Ê±´úÂëÖ´ĞĞ,ËäÈ»ÄÜ¹»»Ö¸´²Ù×÷£¬µ«"°´×¡ keyname ÒÔ¼ÌĞø"×ÖÑù»á³¤ÆÚÔÚÆÁÄ»ÏÂ·½ÏÔÊ¾
+	å®˜æ–¹å¹¶æ²¡æœ‰æŒ‡å‡ºé¢å¤–çš„ç§»é™¤holdKeyæ–¹å¼ï¼Œå› ä¸ºä»–ä¸€èˆ¬å‡ºç°åœ¨"å¼€åœºé˜¶æ®µ", å½“ç©å®¶æœªè·³è¿‡ä¸”æ­¤é˜¶æ®µç»“æŸå, ä»£ç å°±æ²¡æœ‰ä½œç”¨äº†ã€‚
+	ä½†å¦‚æœä½ ç”¨åœ¨åœºæ™¯é˜¶æ®µ, ä¸‹æ–¹ä»£ç æ˜¯å¯ç”¨çš„ç»“æŸæ‰‹æ®µã€‚
+	ä½†åœ¨å¤šäººæ¸¸æˆä¸­, å¦‚æœç©å®¶åœ¨åå°æ—¶ä»£ç æ‰§è¡Œ, è™½ç„¶èƒ½å¤Ÿæ¢å¤æ“ä½œï¼Œä½†"æŒ‰ä½ keyname ä»¥ç»§ç»­"å­—æ ·ä¼šé•¿æœŸåœ¨å±å¹•ä¸‹æ–¹æ˜¾ç¤º
 */
 findDisplay 46 displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_fnc_holdKey_spaceEH"];
 uiNamespace setVariable ["BIS_fnc_holdKey_spaceEH", nil];
-missionNamespace setVariable [ "BIS_fnc_holdKey_onSkip", true ];
+missionNamespace setVariable ["BIS_fnc_holdKey_onSkip", true];
 
 
-//Ìí¼ÓÎäÆ÷±£ÏÕ,±»Ìí¼ÓµÄ¶ÔÏó»áÎŞ·¨¿ª»ğ
-private _actionId = player addAction ["½ûÖ¹¿ª»ğ", { systemChat str "Î´¿ªÆôÎäÆ÷±£ÏÕ"; }, nil, 6, true, true, "defaultAction"];
-//±£´æIDºÅÂë£¬ÓÃÓÚ½â³ı
+// æ·»åŠ æ­¦å™¨ä¿é™©, è¢«æ·»åŠ çš„å¯¹è±¡ä¼šæ— æ³•å¼€ç«
+private _actionId = player addAction ["ç¦æ­¢å¼€ç«", {systemChat str "æœªå¼€å¯æ­¦å™¨ä¿é™©";}, nil, 6, true, true, "defaultAction"];
+// ä¿å­˜IDå·ç ï¼Œç”¨äºè§£é™¤
 player setVariable ["BIS_disableWeaponAction", _actionId];
-//ĞèÒª½â³ıÎäÆ÷±£ÏÕÊ±£º
+// éœ€è¦è§£é™¤æ­¦å™¨ä¿é™©æ—¶ï¼š
 private _id = player getvariable ["BIS_disableWeaponAction", -1];
 player removeAction _id;
 
-//ĞéÄâ¾ü»ğ¿â
-["AmmoboxInit", [player, true, { _this distance _target  < 10 }]] call BIS_fnc_arsenal;
+// è™šæ‹Ÿå†›ç«åº“
+["AmmoboxInit", [player, true, {_this distance _target < 10}]] call BIS_fnc_arsenal;
 
-
+this addAction ["å†›ç«åº“", {["Open", [true]] call BIS_fnc_arsenal}];
 /*========================================================Config===============================================*/
-//·µ»Øµ±Ç°µÄ²å¼şÁĞ±í
+// è¿”å›å½“å‰çš„æ’ä»¶åˆ—è¡¨
 activatedAddons
